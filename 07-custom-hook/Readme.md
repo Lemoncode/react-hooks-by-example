@@ -1,0 +1,148 @@
+# 07 Custom hooks
+
+Hooks are cool, but our functional component seems to get cluttered, is
+there a way to extract functionallity outside the functional component?
+and what's more important is there any chance to make it reusable for
+other components? Yups ! Custom hooks to the rescue.
+
+# Steps
+
+- We will take as starting point sample _00 boilerplate_ copy the conent of the
+  project to a fresh folder an execute _npm install_.
+
+```bash
+npm install
+```
+
+- Let's open the _demo.js_, we will copy the content from sample 06
+  into this sample (the filter name + ajax call sample)
+
+_./demo.js_
+
+```jsx
+import React from "react";
+
+export const MyComponent = () => {
+  const [filter, setFilter] = React.useState("");
+  const [userCollection, setUserCollection] = React.useState([]);
+
+  // Load full list when the component gets mounted and filter gets updated
+  React.useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
+      .then(response => response.json())
+      .then(json => setUserCollection(json));
+  }, [filter]);
+
+  return (
+    <div>
+      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <ul>
+        {userCollection.map((user, index) => (
+          <li key={index}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+```
+
+- Now let's extract the load + filter functionallity in a custom hooks
+  we will implement it using two flavours.
+
+A. Encapsulating as well the _UseEffect_
+
+```diff
+import React from "react";
+
++ const useUserCollection = () => {
++  const [filter, setFilter] = React.useState("");
++  const [userCollection, setUserCollection] = React.useState([]);
++
++  // Load full list when the component gets mounted and filter gets updated
++  React.useEffect(() => {
++    fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
++      .then(response => response.json())
++      .then(json => setUserCollection(json));
++  }, [filter]);
++
++  return {userCollection, filter, setFilter}
++ }
+
+export const MyComponent = () => {
+-  const [filter, setFilter] = React.useState("");
+-  const [userCollection, setUserCollection] = React.useState([]);
++  const {userCollection, filter, setFilter} = useUserCollection();
+
+-  // Load full list when the component gets mounted and filter gets updated
+-  React.useEffect(() => {
+-    fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
+-      .then(response => response.json())
+-      .then(json => setUserCollection(json));
+-  }, [filter]);
+
+  return (
+    <div>
+      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <ul>
+        {userCollection.map((user, index) => (
+          <li key={index}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+```
+
+B. Encapuslating only the states plus load functions (the component will be
+responsible of deciding when to call this methods)
+
+```diff
+import React from "react";
+
++ const useUserCollection = () => {
++  const [filter, setFilter] = React.useState("");
++  const [userCollection, setUserCollection] = React.useState([]);
++
++  const loadUsers = () => {
++    fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
++      .then(response => response.json())
++      .then(json => setUserCollection(json));
++  }
++
++  return {userCollection, loadUsers, filter, setFilter}
++ }
+
+
+export const MyComponent = () => {
++  const {userCollection, loadUsers, filter, setFilter} = useUserCollection();
++
++  React.useEffect(() => {
++    loadUsers();
++  }, [filter]);
+
+-  const [filter, setFilter] = React.useState("");
+-  const [userCollection, setUserCollection] = React.useState([]);
+
+-  // Load full list when the component gets mounted and filter gets updated
+-  React.useEffect(() => {
+-    fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
+-      .then(response => response.json())
+-      .then(json => setUserCollection(json));
+-  }, [filter]);
+
+  return (
+    <div>
+      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <ul>
+        {userCollection.map((user, index) => (
+          <li key={index}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+```
+
+> Discussion here... which approach do you think can be more reusable and under
+> which circumstances (e.g. just create a custom hook to load the list of
+> names without taking into account the filter).
