@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist/
+typings/
+*.orig
+.idea/
+*/src/**/*.js.map
+*.log
+**/.vscode/
+package-lock.json
