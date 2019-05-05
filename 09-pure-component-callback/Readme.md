@@ -23,7 +23,7 @@ npm install
 - Let's open the _demo.js_, we will create a parent and a child component
   (this time the child component will be able to display and edit a given name).
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";

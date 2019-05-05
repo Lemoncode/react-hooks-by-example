@@ -23,7 +23,7 @@ In the child component we will make use ao _React.useEffect_ and using
 as a second parameter an empty array to ensure that the code that will
 called by _useEffect_ will be only executed when the component is mounted.
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";
@@ -79,7 +79,7 @@ const MyChildComponent = () => {
   the function will be executed when the component is unmounted (since we
   are using as a second parameter an empty string).
 
-_./demo.js_
+_./src/demo.js_
 
 ```diff
   React.useEffect(() => {

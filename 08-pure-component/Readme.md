@@ -16,7 +16,7 @@ npm install
 
 - Let's open the _demo.js_, we will create a parent and a child component
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";
@@ -67,7 +67,7 @@ export const DisplayUsername = props => {
   is updated, if we wrap the _DisplayUsername_ component using _React.memo_
   it will do the trick for us.
 
-_./demo.js_
+_./src/demo.js_
 
 ```diff
 - export const DisplayUsername = props => {

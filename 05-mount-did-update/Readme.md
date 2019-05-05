@@ -15,7 +15,7 @@ npm install
 - Let's open the _demo.js_, we will create a parent and child component as
   we did in previous examples.
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";
@@ -67,7 +67,7 @@ const MyChildComponent = () => {
   component is just mounted and on any update (clean up function will be called
   right before the effect is triggered again).
 
-_./demo.js_
+_./src/demo.js_
 
 ```diff
 const MyChildComponent = () => {

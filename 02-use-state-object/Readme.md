@@ -16,7 +16,7 @@ npm install
 
 - Let's open the _demo.js_ file and add our hooks based state.
 
-_./demo.js_
+_./src/demo.js_
 
 ```diff
 import React from "react";

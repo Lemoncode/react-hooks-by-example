@@ -18,7 +18,7 @@ npm install
 - Let's open the _demo.js_, we will create the boiler plate code
   (add a filter input, display a list of names)
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";
@@ -41,6 +41,8 @@ export const MyComponent = () => {
 ```
 
 - Now we want to fire an ajax request every time user types on the filter input.
+
+_./src/demo.js_
 
 ```diff
 export const MyComponent = () => {

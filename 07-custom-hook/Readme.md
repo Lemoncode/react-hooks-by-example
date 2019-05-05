@@ -17,7 +17,7 @@ npm install
 - Let's open the _demo.js_, we will copy the content from sample 06
   into this sample (the filter name + ajax call sample)
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";
@@ -50,6 +50,8 @@ export const MyComponent = () => {
   we will implement it using two flavours.
 
 A. Encapsulating as well the _UseEffect_
+
+_./src/demo.js_
 
 ```diff
 import React from "react";
@@ -95,6 +97,8 @@ export const MyComponent = () => {
 
 B. Encapuslating only the states plus load functions (the component will be
 responsible of deciding when to call this methods)
+
+_./src/demo.js_
 
 ```diff
 import React from "react";

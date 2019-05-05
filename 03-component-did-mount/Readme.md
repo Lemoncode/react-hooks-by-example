@@ -16,7 +16,7 @@ npm install
 
 - Let's open the _demo.js_ file, and overwrite it with the following content.
 
-_./demo.js_
+_./src/demo.js_
 
 ```jsx
 import React from "react";
@@ -38,6 +38,8 @@ export const MyComponent = () => {
   _React.useEffect_ passing a second argument an empty array (that's important
   if we don't pass this the code inside the _useEffect_ would be executed on
   mount and after every render).
+
+_./src/demo.js_
 
 ```diff
 import React from "react";
@@ -62,6 +64,8 @@ export const MyComponent = () => {
 
 * Let's go one step further, let's simulate an asynchronous call (we will do it
   using _setTimeout_).
+
+_./src/demo.js_
 
 ```diff
 import React from "react";
