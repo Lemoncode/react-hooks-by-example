@@ -7,7 +7,7 @@ like that in a functional component? _React.useEffect_ is your friend.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash

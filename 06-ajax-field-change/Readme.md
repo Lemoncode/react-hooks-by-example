@@ -3,12 +3,12 @@
 Let's face the following scenario, a given user can enter a name on a input field,
 we want to trigger an ajax called each time the user types a value on the input
 (returned the filtered list of names). We can do this using _useEffect_ indicating
-in the second argument, instead of an emtpy array, the field name used to trigger
+in the second argument, instead of an empty array, the field name used to trigger
 the call.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash

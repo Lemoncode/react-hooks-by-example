@@ -5,7 +5,7 @@ _React.useState_
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash

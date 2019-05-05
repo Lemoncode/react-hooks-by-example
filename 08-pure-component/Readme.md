@@ -2,12 +2,12 @@
 
 When we used class components we could make use of PureComponents, this
 components will just make a shallow compare of the props and only render
-if there were changes. Is there a way to do this using hoooks? Yes,
+if there were changes. Is there a way to do this using hooks? Yes,
 using _React.memo_
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -82,8 +82,8 @@ _./src/demo.js_
 + });
 ```
 
-- Now if we run the sample we can check (by showing the console or openen react dev
-  tools) that the _DisaplyUsername_ component is only rerendered when the _name_ property
+- Now if we run the sample we can check (by showing the console or open react dev
+  tools) that the _DisplayUsername_ component is only rerendered when the _name_ property
   changes.
 
 # About Basefactor + Lemoncode
