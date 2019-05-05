@@ -1,0 +1,4 @@
+# GitHub linguist library
+
+* linguist-vendored
+*.js linguist-vendored=false
