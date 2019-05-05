@@ -1,4 +1,4 @@
-# 02 Use State Objet
+# 02 Use State Object
 
 In the previous sample we learnt how to make use of _useState_ to add state
 to a functional component. We just added a simple field (string), but what
@@ -7,7 +7,7 @@ component based _SetState_? Your friend spread operator :), let's hop on that.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash

@@ -2,13 +2,13 @@
 
 When we worked with Class component there was a way to free resources (e.g.
 a socket connection, or trapping x,y mouse coordinates...) when the component
-was unmouneted (componentWillUnMount), is there a way to do something like
+was unmounted (componentWillUnMount), is there a way to do something like
 that using hooks? The answer is yes, including more scenarios (beware to
 proper learning them).
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash

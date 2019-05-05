@@ -1,13 +1,13 @@
 # 07 Custom hooks
 
 Hooks are cool, but our functional component seems to get cluttered, is
-there a way to extract functionallity outside the functional component?
+there a way to extract functionality outside the functional component?
 and what's more important is there any chance to make it reusable for
 other components? Yups ! Custom hooks to the rescue.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -46,7 +46,7 @@ export const MyComponent = () => {
 };
 ```
 
-- Now let's extract the load + filter functionallity in a custom hooks
+- Now let's extract the load + filter functionality in a custom hooks
   we will implement it using two flavours.
 
 A. Encapsulating as well the _UseEffect_
@@ -95,7 +95,7 @@ export const MyComponent = () => {
 };
 ```
 
-B. Encapuslating only the states plus load functions (the component will be
+B. Encapsulating only the states plus load functions (the component will be
 responsible of deciding when to call this methods)
 
 _./src/demo.js_

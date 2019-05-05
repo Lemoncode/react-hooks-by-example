@@ -9,7 +9,7 @@ How can we solve this? by using _useRef_
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_ copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -18,7 +18,7 @@ npm install
 
 - Let's create an edge case, we will use _useEffect_ inside we will have to asynchronous calls,
 the first one should setup a _seconds_ state to 1 (it will be executed after 1 seconds), then
-a second async call will be executed after 2 seconds of time ellapse, in theory it should
+a second async call will be executed after 2 seconds of time elapse, in theory it should
 show the current seconds value (1) but instead we get 0. Let's give a try:
 
 _./src/demo.js_
