@@ -29,33 +29,18 @@ _./demo.js_
 import React from "react";
 
 export const MyComponent = () => {
-  const [userInfo, setUserInfo] = React.useState({
-    name: " John ",
-    lastname: "Doe"
-  });
+  const [username, setUsername] = React.useState('John');
+  const [lastname, setLastname] = React.useState('Doe');
 
   return (
     <>
       <h3>
-        {userInfo.name} {userInfo.lastname}
+        {username} {lastname}
       </h3>
-      <EditUsername
-        name={userInfo.name}
-        onChange={name =>
-          setUserInfo({
-            ...userInfo,
-            name
-          })
-        }
-      />
+      <EditUsername name={username} onChange={setUsername} />
       <input
-        value={userInfo.lastname}
-        onChange={e =>
-          setUserInfo({
-            ...userInfo,
-            lastname: e.target.value
-          })
-        }
+        value={lastname}
+        onChange={e => setLastname(e.target.value)}
       />
     </>
   );
@@ -75,38 +60,48 @@ const EditUsername = React.memo(props => {
 - If we run the sample we will check that the render is always triggered
   (onChangeProp callback is always recreated, shallow compare will fail).
 
-- The trick here is to use _React.useCallback_.
+- The trick here is to use _React.useCallback_ and passing as a second
+argument the _username_ property (it will memoize the function until
+_username_ gets updated).
 
 ```diff
 import React from "react";
 
 export const MyComponent = () => {
-  const [userInfo, setUserInfo] = React.useState({
-    name: " John ",
-    lastname: "Doe"
-  });
+  const [username, setUsername] = React.useState('John');
+  const [lastname, setLastname] = React.useState('Doe');
 
-+  const setUserNameCallback = React.useCallback((name) => {
-+    setUserInfo({
-+        ...userInfo,
-+        name,
-+    })
-+  })
-
++  const setUsernameCallback = React.useCallback(
++          setUsername,
++          [username]);
 
   return (
     <>
       <h3>
-        {userInfo.name} {userInfo.lastname}
+        {username} {lastname}
       </h3>
-      <EditUsername
-        name={userInfo.name}
-+        onChange={setUserNameCallback}
--        onChange={e => ({
--          ...userInfo,
--          name: e.target.value
--        })}
+-      <EditUsername name={username} onChange={setUsername} />
++      <EditUsername name={username} onChange={setUsernameCallback} />
+      <input
+        value={lastname}
+        onChange={e => setLastname(e.target.value)}
       />
+    </>
+  );
+};
+
+const EditUsername = React.memo(props => {
+  console.log(
+    "Hey I'm only rerendered when name gets updated, check React.memo"
+  );
+
+  return (
+    <input value={props.name} onChange={e => props.onChange(e.target.value)} />
+  );
+});
 ```
 
 - Now if we run the sample we can check the expected behavior.
+
+> Excercise: what if we group _username_ and _lastname_ in an object (single useState) and use the spread operator to assign the object, would that work?
+check why :-)

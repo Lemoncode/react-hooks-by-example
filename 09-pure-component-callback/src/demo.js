@@ -1,33 +1,18 @@
 import React from "react";
 
 export const MyComponent = () => {
-  const [userInfo, setUserInfo] = React.useState({
-    name: " John ",
-    lastname: "Doe"
-  });
+  const [username, setUsername] = React.useState("John");
+  const [lastname, setLastname] = React.useState("Doe");
 
-  const setUserNameCallback = React.useCallback(name => {
-    setUserInfo({
-      ...userInfo,
-      name
-    });
-  });
+  const setUsernameCallback = React.useCallback(setUsername, [username]);
 
   return (
     <>
       <h3>
-        {userInfo.name} {userInfo.lastname}
+        {username} {lastname}
       </h3>
-      <EditUsername name={userInfo.name} onChange={setUserNameCallback} />
-      <input
-        value={userInfo.lastname}
-        onChange={e =>
-          setUserInfo({
-            ...userInfo,
-            lastname: e.target.value
-          })
-        }
-      />
+      <EditUsername name={username} onChange={setUsernameCallback} />
+      <input value={lastname} onChange={e => setLastname(e.target.value)} />
     </>
   );
 };
