@@ -105,3 +105,13 @@ const EditUsername = React.memo(props => {
 
 > Excercise: what if we group _username_ and _lastname_ in an object (single useState) and use the spread operator to assign the object, would that work?
 check why :-)
+
+# About Basefactor + Lemoncode
+
+We are an innovating team of Javascript experts, passionate about turning your ideas into robust products.
+
+[Basefactor, consultancy by Lemoncode](http://www.basefactor.com) provides consultancy and coaching services.
+
+[Lemoncode](http://lemoncode.net/services/en/#en-home) provides training services.
+
+For the LATAM/Spanish audience we are running an Online Front End Master degree, more info: http://lemoncode.net/master-frontend
