@@ -1,4 +1,4 @@
-# React Hooks By Examples
+# React Hooks By Example
 
 Set of step by step guide examples covering React Hooks, from start to advanced cases.
 
