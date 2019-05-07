@@ -4,25 +4,27 @@ export const MyComponent = () => {
   const [username, setUsername] = React.useState("John");
   const [lastname, setLastname] = React.useState("Doe");
 
-  const setUsernameCallback = React.useCallback(setUsername, [username]);
 
+  const resetNameCallback = React.useCallback(() => setUsername(''), []);
+  
   return (
     <>
       <h3>
         {username} {lastname}
       </h3>
-      <EditUsername name={username} onChange={setUsernameCallback} />
+      <input value={username} onChange={e => setUsername(e.target.value)} />
       <input value={lastname} onChange={e => setLastname(e.target.value)} />
+      <ResetValue onReset={resetNameCallback}>Reset name</ResetValue>
     </>
   );
 };
 
-const EditUsername = React.memo(props => {
+const ResetValue = React.memo(props => {
   console.log(
-    "Hey I'm only rerendered when name gets updated, check React.memo"
+    "Hey I'm only rendered the first time, check React.memo + callback"
   );
 
   return (
-    <input value={props.name} onChange={e => props.onChange(e.target.value)} />
+    <button onClick={props.onReset}>Reset value</button>
   );
 });

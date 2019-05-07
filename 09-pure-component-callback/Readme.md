@@ -1,15 +1,13 @@
 # 09 Pure Components Callback
 
 In the previous sample we saw how to make a component to be pure using
-_React.memo_, that's great, but when using hooks, there's an issue
-what happens if we pass the _setter_ function to the child component?
-This _setter_ function will be always different on every render thus
+_React.memo_, that's great, but when there's an issue
+what happens if we pass the function created inside function component to the child component?
+That  function will be always different on every render thus
 the _memo_ won't take effect.
 
-How can we solve this? We have to options using _useCallback_ or _useReducer_.
-
-In this sample we will cover the _useCallback_ approach in the next one we will
-use _useReducer_.
+How can we solve this? We can make use of _useCallback_, this won't mutate the setter 
+function unless we indicate any dependency (same approach as with React.useEffect).
 
 # Steps
 
@@ -21,7 +19,7 @@ npm install
 ```
 
 - Let's open the _demo.js_, we will create a parent and a child component
-  (this time the child component will be able to display and edit a given name).
+  (this time the child component will just reset the name content).
 
 _./src/demo.js_
 
@@ -29,74 +27,73 @@ _./src/demo.js_
 import React from "react";
 
 export const MyComponent = () => {
-  const [username, setUsername] = React.useState('John');
-  const [lastname, setLastname] = React.useState('Doe');
+  const [username, setUsername] = React.useState("John");
+  const [lastname, setLastname] = React.useState("Doe");
 
+
+  const resetNameCallback = () => {setUsername('');}
+  
   return (
     <>
       <h3>
         {username} {lastname}
       </h3>
-      <EditUsername name={username} onChange={setUsername} />
-      <input
-        value={lastname}
-        onChange={e => setLastname(e.target.value)}
-      />
+      <input value={username} onChange={e => setUsername(e.target.value)} />
+      <input value={lastname} onChange={e => setLastname(e.target.value)} />
+      <ResetValue onReset={resetNameCallback}>Reset name</ResetValue>
     </>
   );
 };
 
-const EditUsername = React.memo(props => {
+const ResetValue = React.memo(props => {
   console.log(
-    "Hey I'm only rerendered when name gets updated, check React.memo"
+    "Hey I'm only rendered the first time, check React.memo + callback"
   );
 
   return (
-    <input value={props.name} onChange={e => props.onChange(e.target.value)} />
+    <button onClick={props.onReset}>Reset value</button>
   );
 });
 ```
 
 - If we run the sample we will check that the render is always triggered
-  (onChangeProp callback is always recreated, shallow compare will fail).
+  (_resetNameCallback_  is always recreated, shallow compare will fail).
 
 - The trick here is to use _React.useCallback_ and passing as a second
-argument the _username_ property (it will memoize the function until
-_username_ gets updated).
+argument an empty array (it will just hold the reference for the function
+forever).
+
 
 ```diff
 import React from "react";
 
 export const MyComponent = () => {
-  const [username, setUsername] = React.useState('John');
-  const [lastname, setLastname] = React.useState('Doe');
+  const [username, setUsername] = React.useState("John");
+  const [lastname, setLastname] = React.useState("Doe");
 
-+  const setUsernameCallback = React.useCallback(
-+          setUsername,
-+          [username]);
+
+-  const resetNameCallback = () => {setUsername('');}
++  const resetNameCallback = React.useCallback(() => setUsername(''), []);
 
   return (
     <>
       <h3>
         {username} {lastname}
       </h3>
--      <EditUsername name={username} onChange={setUsername} />
-+      <EditUsername name={username} onChange={setUsernameCallback} />
-      <input
-        value={lastname}
-        onChange={e => setLastname(e.target.value)}
-      />
+      <input value={username} onChange={e => setUsername(e.target.value)} />
+      <input value={lastname} onChange={e => setLastname(e.target.value)} />
+      <ResetValue onReset={resetNameCallback}>Reset name</ResetValue>
     </>
   );
 };
 
-const EditUsername = React.memo(props => {
+const ResetValue = React.memo(props => {
   console.log(
-    "Hey I'm only rerendered when name gets updated, check React.memo"
+    "Hey I'm only rendered the first time, check React.memo + callback"
   );
 
   return (
-    <input value={props.name} onChange={e => props.onChange(e.target.value)} />
+    <button onClick={props.onReset}>Reset value</button>
   );
 });
 ```
