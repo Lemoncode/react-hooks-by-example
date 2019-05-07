@@ -2,11 +2,9 @@
 
 In the previous sample we worked around the issue with the function 
 that was getting updated on every render by using _useCallback_, this
-approach is cool, but it may lead you to issues on complex scenarios
-(e.g. if you just group an object on a given useState and you want
-to base your function memoization depending on a nested field).
-
-We can make use of _useReducer_ this hook will return a _dispatch_ 
+approach is cool, but for more complex scenarios you may want to organize
+your code using a different approach. Anoter way of solving this issue
+is using _useReducer_, this hook will return a _dispatch_ 
 fucntions that remains stable.
 
 # Steps
