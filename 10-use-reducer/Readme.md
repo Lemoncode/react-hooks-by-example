@@ -3,20 +3,20 @@
 In the previous sample we worked around the issue with the function 
 that was getting updated on every render by using _useCallback_, this
 approach is cool, but for more complex scenarios you may want to organize
-your code using a different approach. Anoter way of solving this issue
+your code using a different approach. Another way of solving this issue
 is using _useReducer_, this hook will return a _dispatch_ 
-fucntions that remains stable.
+function that remains stable.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
 npm install
 ```
 
-- Let's open the _demo.js_, we will create a parent and a child component
+- Let's open the _demo.js_. We will create a parent and a child component
   (this time the child component will be able to display and edit a given name).
 
 _./src/demo.js_
@@ -32,13 +32,13 @@ export const MyComponent = () => {
       <h3>
         {userInfo.username} {userInfo.lastname}
       </h3>
-      <EditUsername name={userInfo.name} onChange={(name) => ({
+      <EditUsername name={userInfo.name} onChange={(name) => setInfo({
         ...userInfo,
         name,
       })} />
       <input
         value={userInfo.lastname}
-        onChange={e => ({
+        onChange={e => setInfo({
           ...userInfo,
           lastname: e.target.value,
         })}
@@ -95,14 +95,14 @@ export const MyComponent = () => {
 -        {userInfo.username} {userInfo.lastname}
 +        {reducer.name} {reducer.lastname}
       </h3>
--      <EditUsername name={userInfo.name} onChange={(name) => ({
+-      <EditUsername name={userInfo.name} onChange={(name) => setInfo({
 -        ...userInfo,
 -        name,
 -      })} />
 +      <EditUsername name={reducer.name} dispatch={dispatch} />
 -      <input
 -        value={userInfo.lastname}
--        onChange={e => ({
+-        onChange={e => setInfo({
 -          ...userInfo,
 -          lastname: e.target.value,
 -        })}

@@ -1,11 +1,11 @@
-# 01 Mount and Did Update events
+# 05 Mount and Did Update events
 
 What if we want to execute some code when the component gets mounted
-and after any update? React.UseEffect has more flavours available..
+and after any update? React.UseEffect has more flavours available.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -20,22 +20,17 @@ _./src/demo.js_
 ```jsx
 import React from "react";
 
-export class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { visible: false };
-  }
+export const MyComponent = () => {
+  const [visible, setVisible] = React.useState(false);
 
-  render() {
-    return (
-      <>
-        {this.state.visible && <MyChildComponent />}
-        <button onClick={() => this.setState({ visible: !this.state.visible })}>
-          Toggle Child component visibility
-        </button>
-      </>
-    );
-  }
+  return (
+    <>
+      {visible && <MyChildComponent />}
+      <button onClick={() => setVisible(!visible)}>
+        Toggle Child component visibility
+      </button>
+    </>
+  );
 }
 
 const MyChildComponent = () => {

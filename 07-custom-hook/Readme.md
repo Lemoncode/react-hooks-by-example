@@ -7,7 +7,7 @@ other components? Yups ! Custom hooks to the rescue.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash

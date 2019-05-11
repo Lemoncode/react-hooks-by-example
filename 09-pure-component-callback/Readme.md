@@ -11,14 +11,14 @@ function unless we indicate any dependency (same approach as with React.useEffec
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the conent of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
 npm install
 ```
 
-- Let's open the _demo.js_, we will create a parent and a child component
+- Let's open the _demo.js_. We will create a parent and a child component
   (this time the child component will just reset the name content).
 
 _./src/demo.js_

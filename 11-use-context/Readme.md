@@ -4,7 +4,7 @@ Accessing the context via hooks is pretty straight forward.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -12,7 +12,7 @@ npm install
 ```
 
 - Now we are going to spend a couple of steps setting up the context (the hooks part is just
-one line of code, you will find it in the last steps form this readme).
+one line of code, you will find it in the last steps of this readme).
 
 _./src/demo.js_
 
@@ -57,8 +57,8 @@ function App() {
 }
 ```
 
-- Now Let's create a _MyComponent_ component under _demo.js_
-** append this to the exiting content on _demo.js**
+- Now let's create a _MyComponent_ component under _demo.js_
+**append this to the existing content on _demo.js**
 
 ```jsx
 export const MyComponent = () => {
@@ -71,6 +71,8 @@ export const MyComponent = () => {
   )
 }
 ```
+
+- Now if we run the sample we will get the expected behavior.
 
 # About Basefactor + Lemoncode
 

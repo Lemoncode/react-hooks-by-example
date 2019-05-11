@@ -5,7 +5,7 @@ _React.useState_
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -35,7 +35,7 @@ export const MyComponent = props => {
 };
 ```
 
-- Now if you run the sample you can check that you a name (John Doe) will be displayed
+- Now if you run the sample you can check that the name (John Doe) will be displayed
   and you can edit it in the same functional component, we don't need a class component
   to hold state anymore, _React.useState_ does all the magic for you.
   

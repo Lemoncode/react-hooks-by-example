@@ -8,7 +8,7 @@ proper learning them).
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -19,31 +19,28 @@ npm install
   and a child component, the child component will be mounted / unmounted by
   clicking a button on the parent component.
 
-In the child component we will make use ao _React.useEffect_ and using
+In the child component we will make use of _React.useEffect_ and using
 as a second parameter an empty array to ensure that the code that will
 called by _useEffect_ will be only executed when the component is mounted.
+
+Overwrite _demo.js_ file with the following content.
 
 _./src/demo.js_
 
 ```jsx
 import React from "react";
 
-export class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { visible: false };
-  }
+export const MyComponent = () => {
+  const [visible, setVisible] = React.useState(false);
 
-  render() {
-    return (
-      <>
-        {this.state.visible && <MyChildComponent />}
-        <button onClick={() => this.setState({ visible: !this.state.visible })}>
-          Toggle Child component visibility
-        </button>
-      </>
-    );
-  }
+  return (
+    <>
+      {visible && <MyChildComponent />}
+      <button onClick={() => setVisible(!visible)}>
+        Toggle Child component visibility
+      </button>
+    </>
+  );
 }
 
 const MyChildComponent = () => {
@@ -74,7 +71,7 @@ const MyChildComponent = () => {
 };
 ```
 
-- What can be do to executed some code just when the component is unmounted?
+- What can be done to execute some code just when the component is unmounted?
   We only need to return a function inside the _useEffect_ entry, by doing this
   the function will be executed when the component is unmounted (since we
   are using as a second parameter an empty string).

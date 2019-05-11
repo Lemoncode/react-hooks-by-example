@@ -1,21 +1,16 @@
 import React from "react";
 
-export class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { visible: false };
-  }
+export const MyComponent = () => {
+  const [visible, setVisible] = React.useState(false);
 
-  render() {
-    return (
-      <>
-        {this.state.visible && <MyChildComponent />}
-        <button onClick={() => this.setState({ visible: !this.state.visible })}>
-          Toggle Child component visibility
-        </button>
-      </>
-    );
-  }
+  return (
+    <>
+      {visible && <MyChildComponent />}
+      <button onClick={() => setVisible(!visible)}>
+        Toggle Child component visibility
+      </button>
+    </>
+  );
 }
 
 const MyChildComponent = () => {
