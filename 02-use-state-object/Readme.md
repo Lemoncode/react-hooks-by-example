@@ -7,7 +7,7 @@ component based _SetState_? Your friend spread operator :), let's hop on that.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
@@ -50,7 +50,7 @@ export const MyComponent = props => {
 ```
 
 - Now if you run the sample you can check that you can update both properties
-  _name_ and _lastname_, you can easily assign an object to use State, and in order
+  _name_ and _lastname_, you can easily assign an object to useState, and in order
   to update it you can just make use of the _spread operator_ instead of using
   _setState_.
 

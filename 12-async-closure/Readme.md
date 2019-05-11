@@ -9,14 +9,14 @@ How can we solve this? by using _useRef_
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_ copy the content of the
+- We will take as starting point sample _00 boilerplate_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
 npm install
 ```
 
-- Let's create an edge case, we will use _useEffect_ inside we will have to asynchronous calls,
+- Let's create an edge case, we will use _useEffect_. Inside we will have to asynchronous calls,
 the first one should setup a _seconds_ state to 1 (it will be executed after 1 seconds), then
 a second async call will be executed after 2 seconds of time elapse, in theory it should
 show the current seconds value (1) but instead we get 0. Let's give a try:
@@ -51,7 +51,7 @@ export const MyComponent = () => {
 ```
 
 - The problem here is that seconds points out to the previous value (check javascript closures
-for more information), how can we solve this, using _useRef_ (it will hold a mutable value in 
+for more information), how can we solve this? using _useRef_ (it will hold a mutable value in 
 a field called _current_).
 
 ```diff
@@ -85,6 +85,8 @@ export const MyComponent = () => {
   );
 };
 ```
+
+- Now if we run the sample we will get the expected behavior.
 
 # About Basefactor + Lemoncode
 
