@@ -113,6 +113,8 @@ Then in our _fetch_ call we can resolve it in the following way:
     }, 2500);
   }, [filter]);
 ```
+> Excercise: we could encapsulate the fetching plus the setSafeUserCollection in a hook,
+why not giving a try? ;)
 
 # About Basefactor + Lemoncode
 
