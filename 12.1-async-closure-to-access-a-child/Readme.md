@@ -41,8 +41,7 @@ export const MyComponent = () => {
 +}
 ```
 
-- For this example, we show the container clientWidth. For render this element attribute,
-  we will create a handle button click to calculate it:
+- In this example we will display the given container width, this action will be triggered when the user clicks on a button:
 
 ```diff
 import React from "react";
