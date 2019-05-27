@@ -1,6 +1,6 @@
 # 12.1 Async Closure
 
-A common use case for _useRef_ is to access a child imperatively.
+A common use case for _useRef_ is to access a dom element child imperatively.
 
 # Steps
 
@@ -11,7 +11,7 @@ A common use case for _useRef_ is to access a child imperatively.
 npm install
 ```
 
-- Let's create an edge case, we will use _useRef_ to get the element clientWidth.
+- We will use _useRef_ to get the div element clientWidth.
   First, we need render a div element and create the ref with _useRef_.
 
 _./src/demo.js_
@@ -26,7 +26,7 @@ export const MyComponent = () => {
 };
 ```
 
-\_./styles.css
+_./styles.css_
 
 ```diff
 .App {
@@ -41,7 +41,7 @@ export const MyComponent = () => {
 +}
 ```
 
-- In this example we will display the given container width, this action will be triggered when the user clicks on a button:
+- In this example we will display the given container width using the ref to this dom element, this action will be triggered when the user clicks on a button:
 
 ```diff
 import React from "react";
