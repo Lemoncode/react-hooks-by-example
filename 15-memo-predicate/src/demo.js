@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-const setSatisfactionClass = (level) => {
+const setSatisfactionClass = level => {
+
   if (level < 100) {
     return "very-dissatisfied"
   }
@@ -33,9 +34,7 @@ export const FaceComponent = React.memo(props => {
   const { level } = props;
 
   return (
-    <>
-      <div className={setSatisfactionClass(level)} />
-    </>
+    <div className={setSatisfactionClass(level)} />
   );
 
-}, isSameRange)
+}, isSameRange);
