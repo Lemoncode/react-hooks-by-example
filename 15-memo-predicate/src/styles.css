@@ -1,0 +1,34 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.very-dissatisfied {
+  width: 100%;
+  height: 80px;
+  background: url("./one.png") no-repeat;
+}
+
+.somewhat-dissatisfied {
+  width: 100%;
+  height: 80px;
+  background: url("./two.png") no-repeat;
+}
+
+.neither {
+  width: 100%;
+  height: 80px;
+  background: url("./three.png") no-repeat;
+}
+
+.somewhat-satisfied {
+  width: 100%;
+  height: 80px;
+  background: url("./four.png") no-repeat;
+}
+
+.very-satisfied {
+  width: 100%;
+  height: 80px;
+  background: url("./five.png") no-repeat;
+}
