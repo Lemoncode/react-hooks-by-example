@@ -30,7 +30,7 @@ export const MyComponent = () => {
   return (
     <>
       <h3>
-        {userInfo.username} {userInfo.lastname}
+        {userInfo.name} {userInfo.lastname}
       </h3>
       <EditUsername name={userInfo.name} onChange={(name) => setInfo({
         ...userInfo,
@@ -92,7 +92,7 @@ export const MyComponent = () => {
   return (
     <>
       <h3>
--        {userInfo.username} {userInfo.lastname}
+-        {userInfo.name} {userInfo.lastname}
 +        {reducer.name} {reducer.lastname}
       </h3>
 -      <EditUsername name={userInfo.name} onChange={(name) => setInfo({
