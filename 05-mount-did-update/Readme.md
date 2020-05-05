@@ -1,7 +1,7 @@
 # 05 Mount and Did Update events
 
 What if we want to execute some code when the component gets mounted
-and after any update? React.UseEffect has more flavours available.
+and after any update? _React.UseEffect_ has more flavours available.
 
 # Steps
 

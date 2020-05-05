@@ -7,7 +7,7 @@ That  function will be always different on every render thus
 the _memo_ won't take effect.
 
 How can we solve this? We can make use of _useCallback_, this won't mutate the setter 
-function unless we indicate any dependency (same approach as with React.useEffect).
+function unless we indicate any dependency (same approach as with _React.useEffect_).
 
 # Steps
 

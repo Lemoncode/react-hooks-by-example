@@ -33,7 +33,7 @@ export const MyComponent = () => {
 };
 ```
 
-- If we run the sample, nothing wil be shown (name is empty), what if we want
+- If we run the sample, nothing will be shown (name is empty), what if we want
   to assign some value right when the component is mounted? We can make use of
   _React.useEffect_ passing as a second argument an empty array (that's important
   if we don't pass this the code inside the _useEffect_ would be executed on

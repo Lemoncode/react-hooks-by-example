@@ -1,20 +1,20 @@
 # 15 Memo predicate
 
-In this sample we will enhance rendering performance hooking to 'shouldComponentUpdate'.
+En este ejemplo mejoraremos el rendimiento del renderizado hookeando 'shouldComponentUpdate'.
 
-We are going to implement a customer satisfaction widget, based on smily faces, it will accept a range value (0 to 500), and the faces will have a range of values 0..99, 100..199, 200..299, 300..399, 400..500. We will only fire the render option whenever the value jumps into the next or previous range.
+Vamos a implementar un widget de satisfacción de clientes, basado en caras con sonrisas. Aceptará un rango de valores (de 0 a 500) y tendrán rangos de valores 0..99, 100..199, 200..299, 300..399, 400..500. Solo lanzaremos el opción de renderizado cuando el valor salte al rango anterior o posterior.
 
-# Steps
+# Pasos
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the project to a fresh folder an execute _npm install_.
+- Tomaremos como punto de partida el ejemplo _00 boilerplate_. Copia el contenido del proyecto a una carpeta nueva y ejecuta _npm install_.
 
 ```bash
 npm install
 ```
 
-- Let's copy the five smiley faces (you can copy them from the sample implementation in github).
+- Copiemos las cinco caras sonrientes (puedes copiarlas de la implementación del ejemplo en github).
 
-- Let's add the following content into the _src/styles.css_  css file to add the smileys styles:
+- Añadamos el siguiente contenido en _src/styles.css_ (estilos para las caras):
 
 ```css
 .very-dissatisfied {
@@ -48,7 +48,7 @@ npm install
 }
 ```
 
-- Let's create a simple component in  _src/demo.js_,  we will start by just adding something hardcoded in file:
+- Vamos a crear un componente simple en _src/demo.js_. Empezaremos por añadir algo hardcodeado en el fichero:
 
 ```diff
 import * as React from 'react';
@@ -66,7 +66,7 @@ import * as React from 'react';
 + }
 ```
 
-- Let's make a quick test on _index.js_:
+- Hagamos una pequeña prueba en _index.js_:
 
 _./src/index.js_
 
@@ -89,13 +89,13 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
-- Let's make a check point and run the sample: check that is working as expected.
+- Hagamos un punto de control y ejecutemos el ejemplo: comprobamos que todo funciona como esperamos.
 
 ```
 npm start
 ```
 
-- Now it's time to link the property with the proper faces, let's create a style function for that in _demo.js_
+- Ahora es el momento de enlazar la propiedad con las correspondientes caras, vamos a crear una función para eso en _demo.js_
 
 _./src/demo.js_
 
@@ -134,7 +134,7 @@ export const FaceComponent = props => {
 }
 ```
 
-- In _index.js_ let's add a state variable to hold the current satisfaction level plus an slider to let the user update it.
+- En _index.js_ vamos a guardar el nivel de satisfación actual en el estado del componente, además de incluir un slider para dejar que el usuario lo actualice.
 
 _./src/index.js_
 
@@ -169,13 +169,13 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
-- Let's run the sample:
+- Probemos los cambios:
 
 ```
 npm start
 ```
 
-- Let's add a rendering optimization, we should only trigger the render whenever the level just changes the satisfaction range:
+- Para terminar vamos a optimizar el renderizado, el cual sólo deberíamos lanzarlo cuando cambie el rango de satisfacción:
 
 _./src/demo.js_
 
@@ -224,18 +224,19 @@ const setSatisfactionClass = level => {
 + }, isSameRange);
 ```
 
-- Now if we place a breakpoint in the FaceComponent render method we can see that render is only triggered when you change from a satisfaction range (e.g. 99 to 100).
+- Si ahora ponemos un punto de parada en el método de renderizado de FaceComponent, podemos ver que el renderizado sólo se lleva a cabo cuando el usuario cambio el rango de satisfacción (por ejemplo de 99 a 100).
 
 ```
 npm start
 ```
 
-# About Basefactor + Lemoncode
+# ¿Te apuntas a nuestro máster?
 
-We are an innovating team of Javascript experts, passionate about turning your ideas into robust products.
+Si te ha gustado este ejemplo y tienes ganas de aprender Front End
+guiado por un grupo de profesionales ¿Por qué no te apuntas a
+nuestro [Máster Front End Online Lemoncode](https://lemoncode.net/master-frontend#inicio-banner)? Tenemos tanto edición de convocatoria
+con clases en vivo, como edición continua con mentorización, para
+que puedas ir a tu ritmo y aprender mucho.
 
-[Basefactor, consultancy by Lemoncode](http://www.basefactor.com) provides consultancy and coaching services.
-
-[Lemoncode](http://lemoncode.net/services/en/#en-home) provides training services.
-
-For the LATAM/Spanish audience we are running an Online Front End Master degree, more info: http://lemoncode.net/master-frontend
+Y si tienes ganas de meterte una zambullida en el mundo _devops_
+apuntate nuestro [Bootcamp devops online Lemoncode](https://lemoncode.net/bootcamp-devops#bootcamp-devops/inicio)

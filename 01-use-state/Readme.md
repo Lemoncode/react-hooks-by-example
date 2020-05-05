@@ -1,6 +1,6 @@
 # 01 Use State
 
-In this basic sample we will just state to a function component, using
+In this basic sample we will just add state to a function component, using
 _React.useState_
 
 # Steps
