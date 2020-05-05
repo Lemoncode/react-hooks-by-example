@@ -24,6 +24,9 @@ List of examples:
   - [10-use-reducer](https://github.com/Lemoncode/react-hooks-by-example/tree/master/10-use-reducer): _useReducer_ effect, including dispatch.
   - [11-use-context](https://github.com/Lemoncode/react-hooks-by-example/tree/master/11-use-context): using the _useContext_ hook to get access to the context in one line of code.
   - [12-async-closure](https://github.com/Lemoncode/react-hooks-by-example/tree/master/12-async-closure): advanced case, getting fresh data from _useState_ on callbacks.
+  - [13-promise-unmounted](https://github.com/Lemoncode/react-hooks-by-example/tree/master/13-promise-unmounted): tracking when component is mounted/unmounted to avoid perform a state update on an unmounted component.
+  - [14-useref-dom](https://github.com/Lemoncode/react-hooks-by-example/tree/master/14-useref-dom): using _useRef_ hook to access a DOM element child.
+  - [15-memo-predicate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/15-memo-predicate): enhancing rendering performance hooking to 'shouldComponentUpdate'.
 
 # About Basefactor + Lemoncode
 
@@ -34,5 +37,3 @@ We are an innovating team of Javascript experts, passionate about turning your i
 [Lemoncode](http://lemoncode.net/services/en/#en-home) provides training services.
 
 For the LATAM/Spanish audience we are running an Online Front End Master degree, more info: http://lemoncode.net/master-frontend
-
-

@@ -1,6 +1,6 @@
 # 08 Pure Components
 
-When we used class components we could make use of PureComponents, this
+When we used class components we could make use of PureComponents, these
 components will just make a shallow compare of the props and only render
 if there were changes. Is there a way to do this using hooks? Yes,
 using _React.memo_

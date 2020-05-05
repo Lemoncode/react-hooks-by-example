@@ -74,7 +74,7 @@ const MyChildComponent = () => {
 - What can be done to execute some code just when the component is unmounted?
   We only need to return a function inside the _useEffect_ entry, by doing this
   the function will be executed when the component is unmounted (since we
-  are using as a second parameter an empty string).
+  are using as a second parameter an empty array).
 
 _./src/demo.js_
 
