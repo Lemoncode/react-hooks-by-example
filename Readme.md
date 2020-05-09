@@ -27,6 +27,8 @@ List of examples:
   - [13-promise-unmounted](https://github.com/Lemoncode/react-hooks-by-example/tree/master/13-promise-unmounted): tracking when component is mounted/unmounted to avoid perform a state update on an unmounted component.
   - [14-useref-dom](https://github.com/Lemoncode/react-hooks-by-example/tree/master/14-useref-dom): using _useRef_ hook to access a DOM element child.
   - [15-memo-predicate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/15-memo-predicate): enhancing rendering performance hooking to 'shouldComponentUpdate'.
+  - [16-use-debug-value](https://github.com/Lemoncode/react-hooks-by-example/tree/master/16-use-debug-value): using built-in hook _useDebugValue_.
+  - [17-why-did-you-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/17-why-did-you-update): implementing a custom hook to avoid unnecesary re-renders.
 
 # About Basefactor + Lemoncode
 
