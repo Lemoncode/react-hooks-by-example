@@ -25,6 +25,8 @@ Listado de ejemplos:
   - [13-promise-unmounted](https://github.com/Lemoncode/react-hooks-by-example/tree/master/13-promise-unmounted): detectando si el componente está montado/desmontado para evitar realizar la actualización del estado de un componente no montado.
   - [14-useref-dom](https://github.com/Lemoncode/react-hooks-by-example/tree/master/14-useref-dom): usando _useRef_ para acceder a un elemento hijo del DOM.
   - [15-memo-predicate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/15-memo-predicate): mejorando el rendimiento del renderizado hookeando 'shouldComponentUpdate'.
+  - - [16-use-debug-value](https://github.com/Lemoncode/react-hooks-by-example/tree/master/16-use-debug-value): usando el hook interno _useDebugValue_.
+  - [17-why-did-you-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/17-why-did-you-update): implementando un custom hook para evitar renderizados innecesarios.
 
 # ¿Te apuntas a nuestro máster?
 
