@@ -107,42 +107,6 @@ Luego podemos resolver nuestra llamada _fetch_ de la siguiente manera:
   }, [filter]);
 ```
 
-- Repetir esto en cada componente que hagamos puede ser un poco rollo, ¿ No podríamos hacerlo más genérico?
-  Vamos a darle una vuelta:
-
-```diff
-+ const useSafeState = () => {
-+  const mountedRef = React.useRef(false);
-+
-+  React.useEffect(() => {
-+    mountedRef.current = true;
-+    return () => (mountedRef.current = false);
-+  }, []);
-+
-+  const isMounted = () => mountedRef.current;
-+
-+  return {isMounted}
-+ }
-
-export const MyChildComponent = () => {
-  const [filter, setFilter] = React.useState("");
-  const [userCollection, setUserCollection] = React.useState([]);
-+
-+ const {isMounted} = useSafeState();
--  const mountedRef = React.useRef(false);
--
--  React.useEffect(() => {
--    mountedRef.current = true;
--    return () => (mountedRef.current = false);
--  }, []);
-
-
-  const setSafeUserCollection = userCollection =>
--    mountedRef.current && setUserCollection(userCollection);
-+    isMounted() && setUserCollection(userCollection);
-
-```
-
 > Ejercicio: podríamos encapsular el fetch y el setSafeUserCollection en un hook,
 > ¿Por qué no intentarlo? ;)
 
