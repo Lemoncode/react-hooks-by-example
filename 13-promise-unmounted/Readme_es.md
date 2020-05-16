@@ -29,7 +29,7 @@ export const MyComponent = () => {
       </button>
     </>
   );
-}
+};
 
 export const MyChildComponent = () => {
   const [filter, setFilter] = React.useState("");
@@ -37,7 +37,7 @@ export const MyChildComponent = () => {
 
   return (
     <div>
-      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       <ul>
         {userCollection.map((user, index) => (
           <li key={index}>{user.name}</li>
@@ -106,8 +106,45 @@ Luego podemos resolver nuestra llamada _fetch_ de la siguiente manera:
     }, 2500);
   }, [filter]);
 ```
+
+- Repetir esto en cada componente que hagamos puede ser un poco rollo, ¿ No podríamos hacerlo más genérico?
+  Vamos a darle una vuelta:
+
+```diff
++ const useSafeState = () => {
++  const mountedRef = React.useRef(false);
++
++  React.useEffect(() => {
++    mountedRef.current = true;
++    return () => (mountedRef.current = false);
++  }, []);
++
++  const isMounted = () => mountedRef.current;
++
++  return {isMounted}
++ }
+
+export const MyChildComponent = () => {
+  const [filter, setFilter] = React.useState("");
+  const [userCollection, setUserCollection] = React.useState([]);
++
++ const {isMounted} = useSafeState();
+-  const mountedRef = React.useRef(false);
+-
+-  React.useEffect(() => {
+-    mountedRef.current = true;
+-    return () => (mountedRef.current = false);
+-  }, []);
+
+
+  const setSafeUserCollection = userCollection =>
+-    mountedRef.current && setUserCollection(userCollection);
++    isMounted() && setUserCollection(userCollection);
+
+```
+
 > Ejercicio: podríamos encapsular el fetch y el setSafeUserCollection en un hook,
-¿Por qué no intentarlo? ;)
+> ¿Por qué no intentarlo? ;)
 
 # ¿Te apuntas a nuestro máster?
 

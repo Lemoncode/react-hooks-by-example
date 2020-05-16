@@ -13,10 +13,7 @@ export const MyComponent = () => {
   );
 };
 
-export const MyChildComponent = () => {
-  const [filter, setFilter] = React.useState("");
-  const [userCollection, setUserCollection] = React.useState([]);
-
+const useSafeState = () => {
   const mountedRef = React.useRef(false);
 
   React.useEffect(() => {
@@ -24,21 +21,32 @@ export const MyChildComponent = () => {
     return () => (mountedRef.current = false);
   }, []);
 
-  const setSafeUserCollection = userCollection =>
-    mountedRef.current && setUserCollection(userCollection);
+  const isMounted = () => mountedRef.current;
+
+  return { isMounted };
+};
+
+export const MyChildComponent = () => {
+  const [filter, setFilter] = React.useState("");
+  const [userCollection, setUserCollection] = React.useState([]);
+
+  const { isMounted } = useSafeState();
+
+  const setSafeUserCollection = (userCollection) =>
+    isMounted() && setUserCollection(userCollection);
 
   // Load full list when the component gets mounted and filter gets updated
   React.useEffect(() => {
     setTimeout(() => {
       fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
-        .then(response => response.json())
-        .then(json => setSafeUserCollection(json));
+        .then((response) => response.json())
+        .then((json) => setSafeUserCollection(json));
     }, 2500);
   }, [filter]);
 
   return (
     <div>
-      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       <ul>
         {userCollection.map((user, index) => (
           <li key={index}>{user.name}</li>
