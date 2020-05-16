@@ -126,6 +126,8 @@ export const MyChildComponent = React.memo(props => {
 +}
 ```
 
+> You can just copy this hook from [usehooks.com](https://usehooks.com/useWhyDidYouUpdate/) or install it as a library [whydidyourender](https://github.com/welldone-software/why-did-you-render#readme)
+
 - Run sample to test the hook.
 
 ```bash
