@@ -48,7 +48,7 @@ _./src/app.tsx_
 ```tsx
 import React from "react";
 
-export const App = () => {
+export const MyComponent = () => {
   return (
     <h1>Hello React !!</h1>
   )
@@ -63,11 +63,11 @@ _./src/index.tsx_
 ```tsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./app";
+import { MyComponent } from "./app";
 
 ReactDOM.render(
   <div>
-    <App />
+    <MyComponent />
   </div>,
   document.getElementById("root")
 );
