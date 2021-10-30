@@ -4,7 +4,7 @@
 
 Punto de partida para el resto de ejemplos.
 
-Es simplemente un proyecto en blanco usando create-react-app.
+Es simplemente un proyecto en blanco usando webpack.
 
 Salta a 01-use-state Readme_es.md y empieza la diversión :).
 
