@@ -13,7 +13,7 @@ export const MyComponent = () => {
   return (
     <>
       <h4>{username}</h4>
-      <input value={username} onChange={e => setUsername(e.target.value)} />
+      <input value={username} onChange={(e) => setUsername(e.target.value)} />
     </>
   );
 };

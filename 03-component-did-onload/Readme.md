@@ -1,14 +1,36 @@
 # 03 Component Did Mount
 
-Reading from the state and updating it on a functional component is something great,
-but we are missing another important part of class components, what about
-lifecycle event handlers like _componentDidMount_? How can we hook to an event
-like that in a functional component? _React.useEffect_ is your friend.
+## Resume
 
-# Steps
+This example takes as a starting point the _02-use-state-object_ example.
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
-  project to a fresh folder an execute _npm install_.
+Let's start playing with another of React's core hooks: _useEffect_
+
+This Hook allows us to get hooked on certain events in time and power
+run code.
+
+Let's start with the most basic, execute a code just when a
+component is mounted in the DOM.
+
+There are many operations that you want to execute right when it's loaded into
+the DOM of the browser your component (when it starts to be viewed), for
+Example loading a token from a client from a server REST API.
+
+There are also operations that we want to be able to execute when a
+value, or in after each render.
+
+What if those operations are not synchronous? For example I want
+pull a setTimeout or make a call to a server, this will return a promise, it is not safe at all to run this directly in a functional component
+since this is executed and destroyed, for this (manage side effects) we have
+_React.useEffect_
+
+In this example we are going to see how to change a name, just when
+mount the component, then we'll simulate an asynchronous call
+using _setTimeout_.
+
+## Step by Step
+
+First we copy the previous example, and do a _npm install_
 
 ```bash
 npm install
