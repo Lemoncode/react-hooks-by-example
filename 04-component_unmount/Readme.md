@@ -1,27 +1,20 @@
 # 04 Component unmount
 
-When we worked with Class component there was a way to free resources (e.g.
-a socket connection, or trapping x,y mouse coordinates...) when the component
-was unmounted (componentWillUnMount), is there a way to do something like
-that using hooks? The answer is yes, including more scenarios (beware to
-proper learning them).
+## Resume
+
+This example takes the _03-component-dom-onload_ example as a starting point.
+
+In this example we are going to see how to free resources when we unmount a DOM component.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
-  project to a fresh folder an execute _npm install_.
+- First we copy the previous example, and execute _npm install_.
 
 ```bash
 npm install
 ```
 
-- Let's open the _demo.js_ file: this time we will create a parent component
-  and a child component, the child component will be mounted / unmounted by
-  clicking a button on the parent component.
-
-In the child component we will make use of _React.useEffect_ and using
-as a second parameter an empty array to ensure that the code that will
-called by _useEffect_ will be only executed when the component is mounted.
+- We are going to create a component that shows or hides a text depending on of a boolean flag.
 
 Overwrite _demo.js_ file with the following content.
 
@@ -42,53 +35,80 @@ export const MyComponent = () => {
     </>
   );
 }
+```
 
-const MyChildComponent = () => {
-  const [userInfo, setUserInfo] = React.useState({
-    name: "John",
-    lastname: "Doe"
-  });
+At first the text is not displayed because _visible_ is false.
 
-  React.useEffect(() => {
-    console.log("called when the component is mounted");
-  }, []);
+We are going to add a button to change the state of _visible_
+
+_./src/demo.tsx_
+
+```diff
+  return (
+    <>
+      {visible && <h4>Hello</h4>}
++      <button onClick={() => setVisible(!visible)}>
++        Toggle Child component visibility
++      </button>
+    </>
+  );
+```
+
+And if we instead of a \ _h4 \ _ \ _, we instantiate a component:
+
+```diff
++ export const MyChildComponent = () => {
++   return <h4>Hello form child component</h4>
++ }
+
+export const MyComponent = () => {
+  const [visible, setVisible] = React.useState(false);
 
   return (
-    <div>
-      <h3>
-        {userInfo.name} {userInfo.lastname}
-      </h3>
-      <input
-        value={userInfo.name}
-        onChange={e => setUserInfo({ ...userInfo, name: e.target.value })}
-      />
-      <input
-        value={userInfo.lastname}
-        onChange={e => setUserInfo({ ...userInfo, lastname: e.target.value })}
-      />
-    </div>
+    <>
+-      {visible && <h4>Hello</h4>}
++      {visible && <MyChildComponent/>}
+      <button onClick={() => setVisible(!visible)}>
+        Toggle Child component visibility
+      </button>
+    </>
   );
 };
 ```
+- Now we have a children component that clicking on a button it's mount or dismount from the DOM.
 
-- What can be done to execute some code just when the component is unmounted?
-  We only need to return a function inside the _useEffect_ entry, by doing this
-  the function will be executed when the component is unmounted (since we
-  are using as a second parameter an empty array).
+How could we do to display a message on the console
+browser when the child component will be mounted?
+If we remember the previous example, it would be with _React.useEffect_.
+Do you dare to try it? Pause the video and try it :)
+
+We could do something like:
+
+_./src/demo.tsx_
+
+```diff
+export const MyChildComponent = () => {
++ React.useEffect(() => {
++  console.log('El componente se acaba de montar en el DOM')
++ }, [])
++
+  return <h4>Hello form child component</h4>;
+};
+```
+
+- Now comes the interesting part, and if we want to show a message by the browser console when the component is unmounted from the DOM?  In the same function that we put as the first parameter we return the "cleanup" function ... _useEffect_ is going to save that function until I unmount the DOM to invoke it:
+
 
 _./src/demo.js_
 
 ```diff
+export const MyChildComponent = () => {
   React.useEffect(() => {
-    console.log("called when the component is mounted");
-
-+    return () => console.log('Called on component unmounted, check the [] on the react use effect');
+    console.log("El componente se acaba de montar en el DOM");
++   return () => console.log("El componente se acaba de desmontar del DOM");
   }, []);
 ```
-
-- If you run the sample and open the browser console, you can whenever we click to
-  hide the child component the _unmounted_ function will be executed and the message
-  will be displayed in the browser console log.
+What can this do for me? Imagine that you open a connection to a websocket and you want to close it when the user hides the component, how do you free resources in an orderly manner? Here it is.
 
 # About Basefactor + Lemoncode
 
