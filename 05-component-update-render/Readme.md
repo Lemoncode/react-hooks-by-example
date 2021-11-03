@@ -1,12 +1,14 @@
-# 05 Mount and Did Update events
+# 05 Component update render
 
-What if we want to execute some code when the component gets mounted
-and after any update? _React.UseEffect_ has more flavours available.
+## Resume
+
+We will take as starting point sample \_04-component-dom-unmount.
+
+In this example we will check how to use React.useEffect to execute a code right after each render.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
-  project to a fresh folder an execute _npm install_.
+- First we copy the previous example, and we execute _npm install_
 
 ```bash
 npm install
@@ -17,7 +19,7 @@ npm install
 
 _./src/demo.js_
 
-```jsx
+```tsx
 import React from "react";
 
 export const MyComponent = () => {
@@ -74,13 +76,24 @@ const MyChildComponent = () => {
 + React.useEffect(() => {
 +    console.log("A. Called when the component is mounted and after every render");
 +
++      );
++  });
+
+  return (
+```
+- If we execute we can check that this code is executed after each rendering of the component.
+
+- We can also add a function to free up resources just before the next render is executed.
+
+```diff
+React.useEffect(() => {
+    console.log("A. Called when the component is mounted and after every render");
+
 +    return () =>
 +      console.log(
 +        "B. Cleanup function called after every render"
 +      );
 +  });
-
-  return (
 ```
 
 - If we start the project and open the browser console we can check the

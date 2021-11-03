@@ -11,18 +11,16 @@ export const MyComponent = () => {
       </button>
     </>
   );
-}
+};
 
 const MyChildComponent = () => {
   const [userInfo, setUserInfo] = React.useState({
     name: "John",
-    lastname: "Doe"
+    lastname: "Doe",
   });
 
   React.useEffect(() => {
-    console.log(
-      "A. Called when the component is mounted and after every render"
-    );
+    console.log("A. Called right after every render");
 
     return () => console.log("B. Cleanup function called after every render");
   });
@@ -34,11 +32,11 @@ const MyChildComponent = () => {
       </h3>
       <input
         value={userInfo.name}
-        onChange={e => setUserInfo({ ...userInfo, name: e.target.value })}
+        onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
       />
       <input
         value={userInfo.lastname}
-        onChange={e => setUserInfo({ ...userInfo, lastname: e.target.value })}
+        onChange={(e) => setUserInfo({ ...userInfo, lastname: e.target.value })}
       />
     </div>
   );
