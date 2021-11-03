@@ -68,7 +68,7 @@ export const MyComponent = () => {
 ```
 
 **OJO !!! Typicode** corre en un heroku gratuito que se duerme cada X tiempo :)
-Vamos a probar con otras API
+Vamos a probar con otras API.
 
 Ojo, que esto impactara en el codigo, tenemos que meter algún cambio y
 ver que devuelven estas api, esto lo haremos como ejercicio.
