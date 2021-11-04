@@ -1,21 +1,30 @@
-# 07 Custom hooks
+# 07 Custom Hooks
 
-Los hooks molan, pero nuestro componente funcional parece estar desordenado. ¿Hay alguna forma de extraer la funcionalidad fuera del componente? Y lo que es más importante, ¿hay alguna posibilidad de hacerla reusable para otro componentes? Si ! Los custom hook al rescate.
+## Resumen
 
-# Pasos
+Este ejemplo toma como punto de partida el ejemplo \_06-ajax-field-change.
 
-- Tomaremos como punto de partida el ejemplo _00 boilerplate_. Copia el contenido del proyecto a una carpeta nueva y ejecuta _npm install_.
+Esto de los hooks está muy bien, pero si empezamos a usarlo en proyectos
+reales, nos podemos encontrar que nuestros componente funcionales pueden
+acabar manchados de un montón de código, y lo que es peor ¿ Cómo puedo
+reusar funcionalidad? ... Para todo esto tenemos los customs hooks, sí...
+hacernos nuestros propios hooks, ya veréis que fáciles son de crear.
+
+## Paso a Paso
+
+- Primero copiamos el ejemplo anterior, y hacemos un _npm install_
 
 ```bash
 npm install
 ```
 
-- Abramos el fichero _demo.js_, copiaremos el contenido del ejemplo 06 en este ejemplo
-(filtrado de nombre + llamada ajax simple)
+- Vamos a partir del código en el que teníamos un _input_ de filtrado
+  y una lista de usuarios que venía de servidor. Si no lo tienes a mano
+  aquí va el código:
 
-_./src/demo.js_
+_./src/demo.tsx_
 
-```jsx
+```tsx
 import React from "react";
 
 export const MyComponent = () => {
@@ -25,13 +34,13 @@ export const MyComponent = () => {
   // Load full list when the component gets mounted and filter gets updated
   React.useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users?name_like=${filter}`)
-      .then(response => response.json())
-      .then(json => setUserCollection(json));
+      .then((response) => response.json())
+      .then((json) => setUserCollection(json));
   }, [filter]);
 
   return (
     <div>
-      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       <ul>
         {userCollection.map((user, index) => (
           <li key={index}>{user.name}</li>
@@ -42,11 +51,12 @@ export const MyComponent = () => {
 };
 ```
 
-- Ahora extraigamos la funcionalidad de carga y filtrado en un custom hook. Lo implementaremos de dos formas
+- Vamos ahora a extraer la funcionalidad de carga y filtrado a un custom hooks
+  lo haremos de dos formas.
 
-A. Encapsulando también el _UseEffect_
+La primera, encapsulandolo todo incluido el _useEffect_
 
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```diff
 import React from "react";
@@ -90,9 +100,14 @@ export const MyComponent = () => {
 };
 ```
 
-B. Encapsulando sólo los estados más las funciones de carga (el componente será el responsable de decidir cuando llamar a estos métodos)
+La ventaja de esta aproximación es que dejamos el código del componente muy simple.
 
-_./src/demo.js_
+La principal desventaja es que este hook es muy específico para este component,
+¿ Y si sólo quisieramos cargar la lista la primera vez o bajo otras condiciones?
+
+Vamos a ver una segunda opción:
+
+_./src/demo.tsx_
 
 ```diff
 import React from "react";
@@ -141,7 +156,13 @@ export const MyComponent = () => {
 };
 ```
 
-> Pensemos... ¿Qué propuesta piensas que es más reusable y bajo que circunstancias? (por ejemplo, crear un custom hook sólo para cargar la lista de nombres sin tener en cuenta el filtro).
+La ventaja de esta opción es que hemos hecho un hook más flexible.
+
+La principal desventaja es que estamos dejando el código del _useEffect_ dentro
+del componente.
+
+¿ Cual de las dos opciones es mejor? Aquí depende del escenario que te encuentres
+en cada caso.
 
 # ¿Te apuntas a nuestro máster?
 
@@ -151,5 +172,7 @@ nuestro [Máster Front End Online Lemoncode](https://lemoncode.net/master-fronte
 con clases en vivo, como edición continua con mentorización, para
 que puedas ir a tu ritmo y aprender mucho.
 
+Si lo que te gusta es el mundo del _backend_ también puedes apuntante a nuestro [Bootcamp backend Online Lemoncode](https://lemoncode.net/bootcamp-backend#bootcamp-backend/inicio)
+
 Y si tienes ganas de meterte una zambullida en el mundo _devops_
-apuntate nuestro [Bootcamp devops online Lemoncode](https://lemoncode.net/bootcamp-devops#bootcamp-devops/inicio)
+apuntate nuestro [Bootcamp devops online Lemoncode](https://lemoncode.net/bootcamp-devops#bootcamp-devops/inicio).
