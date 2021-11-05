@@ -86,7 +86,7 @@ En _useReducer_ we group a set of functionality.
 - And those actions update the state in a reducer (a reducer is a function that accepts two parameters the previus state and the action, and returns you a new state).
 - Where is this? In thinking that the current state is like a frame of a movie, we fix it, we receive a request for change (with the action) and a new frame is generated based on the previous one and the change that we want to make, if there is no change the same as before is returned.
 
-Let's first to define our _reducer_
+Let's first to define our _reducer_.
 
 - Taking average of the fact that we are working with  ** TypeScript ** we are going to type our reducer and actions:
 
@@ -110,7 +110,7 @@ const actionIds = {
 };
 ```
 
-- And now Let's go to create our reducer
+- And now Let's go to create our reducer.
 
 _./src/demo.tsx_
 
