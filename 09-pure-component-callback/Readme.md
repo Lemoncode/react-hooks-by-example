@@ -18,42 +18,45 @@ function unless we indicate any dependency (same approach as with _React.useEffe
 npm install
 ```
 
-- Let's open the _demo.js_. We will create a parent and a child component
+- Let's open the _demo.tsx_. We will create a parent and a child component
   (this time the child component will just reset the name content).
 
-_./src/demo.js_
+_./src/demo.tsx_
 
-```jsx
+```tsx
 import React from "react";
+
+interface Props {
+  onReset: () => void;
+}
+
+const ResetValue: React.FC<Props> = React.memo((props) => {
+  console.log(
+    "Hey I'm only rendered the first time, check React.memo + callback"
+  );
+
+  return <button onClick={props.onReset}>Reset value</button>;
+});
 
 export const MyComponent = () => {
   const [username, setUsername] = React.useState("John");
   const [lastname, setLastname] = React.useState("Doe");
 
+  const resetNameCallback = () => {
+    setUsername("");
+  };
 
-  const resetNameCallback = () => {setUsername('');}
-  
   return (
     <>
       <h3>
         {username} {lastname}
       </h3>
-      <input value={username} onChange={e => setUsername(e.target.value)} />
-      <input value={lastname} onChange={e => setLastname(e.target.value)} />
+      <input value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input value={lastname} onChange={(e) => setLastname(e.target.value)} />
       <ResetValue onReset={resetNameCallback}>Reset name</ResetValue>
     </>
   );
 };
-
-const ResetValue = React.memo(props => {
-  console.log(
-    "Hey I'm only rendered the first time, check React.memo + callback"
-  );
-
-  return (
-    <button onClick={props.onReset}>Reset value</button>
-  );
-});
 ```
 
 - If we run the sample we will check that the render is always triggered
@@ -98,10 +101,9 @@ const ResetValue = React.memo(props => {
 });
 ```
 
-- Now if we run the sample we can check the expected behavior.
+- If we runt he example, we can see that the rerender is no longer launched in the component.
 
-> Excercise: what if we group _username_ and _lastname_ in an object (single useState) and use the spread operator to assign the object, would that work?
-check why :-)
+How does this work? _useCallback_ will return a function that was originally created, and it returns this instead of creating a new one in each render, we achive this by passing an empty array as a second argument(as we did with _React.useEffect_) and if we omit the second parameter, this function will be reevaluated after each render.
 
 # About Basefactor + Lemoncode
 
