@@ -1,5 +1,9 @@
 # 07 Custom hooks
 
+## Resume
+
+This example takes as its starting point the \ _06-ajax-field-change example.
+
 Hooks are cool, but our functional component seems to get cluttered, is
 there a way to extract functionality outside the functional component?
 and what's more important is there any chance to make it reusable for
@@ -7,19 +11,17 @@ other components? Yups ! Custom hooks to the rescue.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
-  project to a fresh folder an execute _npm install_.
+- First we copy the previous example, and execute _npm install_
 
 ```bash
 npm install
 ```
 
-- Let's open the _demo.js_, we will copy the content from sample 06
-  into this sample (the filter name + ajax call sample)
+- Let's start with the code in which we had a filtering _input_ and a list of users that came from the server. If you don't have it on hand here is the code:
 
-_./src/demo.js_
+_./src/demo.tsx_
 
-```jsx
+```tsx
 import React from "react";
 
 export const MyComponent = () => {
@@ -98,7 +100,7 @@ export const MyComponent = () => {
 B. Encapsulating only the states plus load functions (the component will be
 responsible of deciding when to call this methods)
 
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```diff
 import React from "react";
