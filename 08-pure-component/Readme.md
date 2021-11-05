@@ -7,24 +7,36 @@ using _React.memo_
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
+- We will take as starting point sample _07-custom-hook_. Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
 npm install
 ```
 
-- Let's open the _demo.js_, we will create a parent and a child component
+- Let's open the _demo.tsx_, we will create a parent and a child component
 
-_./src/demo.js_
+_./src/demo.tsx_
 
-```jsx
+```tsx
 import React from "react";
+
+interface Props {
+  name: string;
+}
+
+export const DisplayUsername = (props: Props) => {
+  console.log(
+    "Hey I'm only rerendered when name gets updated, check React.memo"
+  );
+
+  return <h3>{props.name}</h3>;
+};
 
 export const MyComponent = () => {
   const [userInfo, setUserInfo] = React.useState({
     name: " John ",
-    lastname: "Doe"
+    lastname: "Doe",
   });
 
   return (
@@ -32,32 +44,24 @@ export const MyComponent = () => {
       <DisplayUsername name={userInfo.name} />
       <input
         value={userInfo.name}
-        onChange={e =>
+        onChange={(e) =>
           setUserInfo({
             ...userInfo,
-            name: e.target.value
+            name: e.target.value,
           })
         }
       />
       <input
         value={userInfo.lastname}
-        onChange={e =>
+        onChange={(e) =>
           setUserInfo({
             ...userInfo,
-            lastname: e.target.value
+            lastname: e.target.value,
           })
         }
       />
     </>
   );
-};
-
-export const DisplayUsername = props => {
-  console.log(
-    "Hey I'm only rerendered when name gets updated, check React.memo"
-  );
-
-  return <h3>{props.name}</h3>;
 };
 ```
 
@@ -67,7 +71,7 @@ export const DisplayUsername = props => {
   is updated, if we wrap the _DisplayUsername_ component using _React.memo_
   it will do the trick for us.
 
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```diff
 - export const DisplayUsername = props => {
