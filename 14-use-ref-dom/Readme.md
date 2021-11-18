@@ -1,22 +1,23 @@
 # 14 React.useRef DOM
 
-A common use case for _useRef_ is to access a dom element child imperatively.
+In the previous example we introduced the hook _userRef_, in this example
+we are going to use it to access a node of the dom.
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
-  project to a fresh folder an execute _npm install_.
+- We take as a starting point _13-async-closure_, we copy the content
+  and we do a _npm install_.
 
 ```bash
 npm install
 ```
 
-- We will use _useRef_ to get the div element clientWidth.
-  First, we need render a div element and create the ref with _useRef_.
+- In _demo.js_ we paste the following code (note that here we define
+  the _useRef_ and associate it in the _div_ container)
 
-_./src/demo.js_
+_./src/demo.tsx_
 
-```jsx
+```tsx
 import React from "react";
 
 export const MyComponent = () => {
@@ -41,7 +42,8 @@ _./styles.css_
 +}
 ```
 
-- In this example we will display the given container width using the ref to this dom element, this action will be triggered when the user clicks on a button:
+
+- In this example we are going to show the current width of the container using the associated _ref_ to this element of _dom_
 
 ```diff
 import React from "react";
@@ -68,7 +70,8 @@ export const MyComponent = () => {
 
 ```
 
-- Now if we run the sample we will get the expected behavior.
+- If we execute, we can see how it now gives us the current result when we press
+  on the button.
 
 # About Basefactor + Lemoncode
 
