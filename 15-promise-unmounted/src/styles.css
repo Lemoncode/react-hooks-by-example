@@ -1,0 +1,9 @@
+.my-text {
+  color: blue;
+}
+
+.container {
+  border: 1px solid steelblue;
+  margin: 15px;
+  padding: 50px;
+}
