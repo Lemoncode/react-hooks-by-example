@@ -22,11 +22,11 @@ export const MyComponent = () => {
   const [id, setId] = React.useState(0);
 
   const name = {
-    firstname: 'John',
-    lastname: 'Doe',
+    firstname: "John",
+    lastname: "Doe",
   };
 
-  return(
+  return (
     <div>
       <div>
         <MyChildComponent name={name} cont={cont} />
@@ -47,13 +47,12 @@ interface Name {
 }
 
 interface Props {
-  name: Name,
-  cont: number,
+  name: Name;
+  cont: number;
 }
 
-export const MyChildComponent: React.FC<Props> = React.memo(props => {
-  
-  return(
+export const MyChildComponent: React.FC<Props> = React.memo((props) => {
+  return (
     <div>
       {props.name.firstname} {props.name.lastname} cont: {props.cont}
     </div>
@@ -107,27 +106,36 @@ export const MyChildComponent = React.memo(props => {
 +  // ... for comparison next time this hook runs.
 +  const previousProps = React.useRef();
 +
-+  React.useEffect(() => {
++ React.useEffect(() => {
 +    if (previousProps.current) {
++      console.log(previousProps.current);
 +      // Get all keys from previous and current props
-+      const allKeys = Object.keys({ ...previousProps.current, ...props });
++      const allKeys = Object.keys({
++        ...(previousProps.current as any),
++        ...props,
++      });
++
 +      // Use this object to keep track of changed props
 +      const changesObj = {};
 +      // Iterate through keys
-+      allKeys.forEach(key => {
++      allKeys.forEach((key) => {
 +        // If previous is different from current
-+        if (previousProps.current[key] !== props[key]) {
++        if (
++          previousProps &&
++          previousProps.current &&
++          previousProps.current[key] !== props[key]
++        ) {
 +          // Add to changesObj
 +          changesObj[key] = {
 +            from: previousProps.current[key],
-+            to: props[key]
++            to: props[key],
 +          };
 +        }
 +      });
 +
 +      // If changesObj not empty then output to console
 +      if (Object.keys(changesObj).length) {
-+        console.log('[why-did-you-update]', name, changesObj);
++        console.log("[why-did-you-update]", name, changesObj);
 +      }
 +    }
 +
@@ -149,7 +157,7 @@ npm start
 
 - Gracias a nuestro custom hook nos hemos dado cuenta que la variable _name_ debería estar fuera de _MyComponent_. Si modificamos _demo.tsx_ poniendo la variable _name_ fuera del componente padre, el hook _useWhyDidYouUpdate_ sólo lanzará un mensaje en el console log cuando el botón _Increment cont_ se pulse.
 
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```diff
 import React from "react";
@@ -182,6 +190,16 @@ export const MyComponent = () => {
     </div>
   );
 };
+
+interface Name {
+  firstname: string;
+  lastname: string;
+}
+
+interface Props {
+  name: Name;
+  cont: number;
+}
 
 export const MyChildComponent = React.memo(props => {
   useWhyDidYouUpdate('MyChildComponent', props);

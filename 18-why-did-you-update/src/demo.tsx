@@ -1,13 +1,13 @@
 import React from "react";
 
+const name = {
+  firstname: "John",
+  lastname: "Doe",
+};
+
 export const MyComponent = () => {
   const [cont, setCont] = React.useState(0);
   const [id, setId] = React.useState(0);
-
-  const name = {
-    firstname: "John",
-    lastname: "Doe",
-  };
 
   return (
     <div>
@@ -48,19 +48,25 @@ function useWhyDidYouUpdate(name, props) {
   // Get a mutable ref object where we can store props ...
   // ... for comparison next time this hook runs.
   const previousProps = React.useRef();
-  
+
   React.useEffect(() => {
     if (previousProps.current) {
-      console.log(previousProps.current);
       // Get all keys from previous and current props
-      const allKeys = Object.keys({ ...previousProps.current, ...props });
-      
+      const allKeys = Object.keys({
+        ...(previousProps.current as any),
+        ...props,
+      });
+
       // Use this object to keep track of changed props
       const changesObj = {};
       // Iterate through keys
       allKeys.forEach((key) => {
         // If previous is different from current
-        if (previousProps.current[key] !== props[key]) {
+        if (
+          previousProps &&
+          previousProps.current &&
+          previousProps.current[key] !== props[key]
+        ) {
           // Add to changesObj
           changesObj[key] = {
             from: previousProps.current[key],
