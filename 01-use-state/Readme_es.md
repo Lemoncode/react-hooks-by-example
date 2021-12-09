@@ -70,7 +70,7 @@ librerías, veamos porque:
 
 - Al crear una variable, cada vez que se vuelva a repintar el componente
   _myName_ va a valer siempre _John Doe_, esto no deja de ser una función que se
-  ejecuta una y otra vez en cada repintado.,
+  ejecuta una y otra vez en cada repintado.
 
 - Asignando directamente en el _input_ un valor a una variable nos cargamos
   dos de los pilares de React, el flujo unidireccional, y que el seteo del
