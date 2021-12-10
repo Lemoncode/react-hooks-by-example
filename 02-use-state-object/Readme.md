@@ -2,24 +2,24 @@
 
 ## Resume
 
-This example takes the _01-use-state_ example as a starting point.
+This example takes the _01-use-state_ as a starting point.
 
 In the previous example we stored a string in the state, but
-not all are basic types, can we store an object using
-useState? Sure yes, the only thing that when we want to introduce
-changes in state we have to follow the principle of immutability
-and do not modify the original object.
+...do we need to use a _useState_ per each basic fild, can we store an object using
+useState? Yes you can, but we have to take into consideration that updates on this
+object must be done following the principle of immutability (we never
+add an update on a given object, we create a new one).
 
 ## Steps
 
-- First we copy the previous example, and do a _npm install_
+- First we copy the previous example, and execute a _npm install_
 
 ```bash
 npm install
 ```
 
-- Let's go to store in the state an object that has the name
-  and last name of a user, first we can write something like:
+- Let's go store in the state an object that has the name
+  and last name of a given user, we can write something like:
 
 _./src/demo.tsx_
 
@@ -32,9 +32,9 @@ export const MyComponent: React.FC = () => {
 +  });
 ```
 
-So we create a state to which we store the object, but it would come to us
-good to have some strong typing, to help us find silly bugs
-of the type I forgot to put the "t" in lastname.
+By doing this we create a state that stores the object, but it would a good idea to
+get benefit of using TypeScript and add strong typing, this will help us finding silly bugs
+like _Ouch ! I forgot to type the "t" in lastname_.
 
 ```diff
 + interface UserInfo {
@@ -50,8 +50,7 @@ export const MyComponent: React.FC = () => {
   });
 ```
 
-- We already have the _useState_ typed in which we have userInfo,
-  we are going to show the data by default.
+- Coold, now that we got our object stored and typed, let's display the user name and lastname.
 
 ```diff
   return (
@@ -63,10 +62,10 @@ export const MyComponent: React.FC = () => {
   );
 ```
 
-- If we start the application we can see how the name and surname are displayed.
+If we start the application we can see how the name and surname are displayed.
 
-- Now let's go to the nougat, we might be tempted to directly modify userInfo and
-  see what happens, do something like (**SPOILER ALERT: THIS IS WRONG**):
+- Let's jump on the main thing, updating the name field..., we might be tempted to update userInfo, but this won't
+  work, anyway let's give a try (**SPOILER ALERT: THIS IS WRONG**):
 
 ```diff
   return (
@@ -82,15 +81,13 @@ export const MyComponent: React.FC = () => {
   );
 ```
 
-This is not going to work, we have rethought in Java mentality,
-we are trying to modify something that is alive in the moment
-that this function is executed, we have to ask the state
-that we are going to introduce a modification.
+This is not going to work, we are again applying a Java / Angular approach,
+we are trying to modify something that is alive only when the function is being
+executed, once the component is rerended this value will be lost.
 
-- The way to do this is by passing the state a new object, in which
-  values ​​that do not change are kept and those that change are created as
-  new object / input, here comes the spread operator (the three dots)
-  to the rescue.
+- The way to do this is by creating a new objecto and assigning it using the _setState_
+  method, in order to do this copy we use the spread operator (by doing this all the fields
+  that doesn't change are just passed as they are, they are not recreated).
 
 ```diff
   return (
@@ -111,12 +108,12 @@ that we are going to introduce a modification.
 ```
 
 Now it works, when we want to update _userInfo_ we do
-the request to update the state and we create a new object for it
-copying all the properties of the old one and as last happens we crush
-the value of the property that has changed.
+the request to update the state and we create a new object
+copying all the properties of the old one and creating a new
+entry for the one that had changes.
 
-- Let's go to do the same for lastname, if you want to give the pause in this
-  video and try it on your own.
+- Let's do the same for lastname, before reading the solution
+  try to solve it by yourself, it's a good exercise.
 
 ```diff
   return (
@@ -145,7 +142,6 @@ the value of the property that has changed.
     </>
   );
 ```
-
 
 Now we can test and see that we can update both the name and
 surname.
