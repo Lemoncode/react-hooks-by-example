@@ -6,18 +6,17 @@ This example takes the _11-use-context_ example as a starting point.
 
 ### Short explanation
 
-An important issue to consider with hooks and functional components 
+An important issue to consider with hooks and functional components
 is that the functions are executed once and die ( hooks serve as data stores
-among other things),
-but if we make an asynchronous call in that function, by the parciple of closure when 
-that function is invoked, the
-data that we will have will be the values of said execution.
+among other things), but if we make an asynchronous call,
+the closure principle will be applied and if we need to retrieve any
+state data it will just hold a frozen value from the past.
 
 ### Long explanation
 
-One of the fundamental prerequisites to be able learn React is to have 
-a solid undertanding of Javascript and ES6. In this case have very
-clear the concept of _clousure_.
+One of the fundamental prerequisites to be able learn React is to have
+a solid undertanding of Javascript and ES6. In this case you need to have
+a good understanding of the _clousure_ concept.
 
 Functional components are just that, functions:
 
@@ -25,9 +24,8 @@ Functional components are just that, functions:
 - They run.
 - They die.
 
-If we remember the concept of closure, when it had an asynchronous call it allowed me
-in the response to access variables of the parent function that
-had invoked even though this function was already dead.
+If we remember the concept of closure, when we launch an asynchronous call it allowed me (in the async response handler)
+to access variables of the parent function that even though this function was already dead.
 
 If we apply this concept to React, we can find a curious case:
 
@@ -36,11 +34,11 @@ If we apply this concept to React, we can find a curious case:
 - While the call is in progress the discount field changes.
 - In the server's response we multiply the order total by the discount.
 
-What discount value do you think the old or the new will apply? ... Grats!!!!, the
-old Why? ... let's think about a closure, we don't stop having a parent function
-that has died, that maintains the values ​​by the principle of closure and that reads
-the values ​​that it had at that moment What happens with the new values ​​are generated
-in another life ... that is, in another call to the function where everything starts again).
+What discount value do you think will be appled, the old or the new one? ... Ouch!, the
+old one, Why? ... let's think about a closure, the parent function execution finished (the
+async call is on it's way) the parent function execution is dead, but following the closure
+principle, this values will be kept in the heap until the async call is completed,
+What happens with the new values? They ​​are generated in _second life_ ... that is, in another call to the function where everything starts again).
 
 Let's see this with an example.
 
@@ -56,27 +54,27 @@ _./src/demo.tsx_
 import React from "react";
 
 export const MyComponent: React.FC = () => {
-  const [numero, setNumero] = React.useState(0);
+  const [number, setNumber] = React.useState(0);
 
   React.useEffect(() => {
     setTimeout(() => {
-      setNumero(numero + 1);
+      setNumber(number + 1);
     }, 1500);
-    setNumero(1);
+    setNumber(1);
   }, []);
 
   return (
     <>
-      <h4>El numero: {numero}</h4>
+      <h4>Number: {number}</h4>
     </>
   );
 };
 ```
 
-Is what is happening normal? At first glance after a second and a half, the displayed value
-it should be _2_, what's up? That in the callback when you pull the closure of that execution, the value number is _0_.
+If you run this code you will find some odd behavior? At first glance after a second and a half, the displayed value
+should be _2_, what's up? The callback is reading the frozen value not the actual one.
 
-How can we correct this? the _setState_ function brings a second signature in which we can pass it
+How can we fix this? the _setState_ function brings a second signature in which we can pass it
 a function:
 
 ```diff
@@ -90,8 +88,7 @@ a function:
   }, []);
 ```
 
-
-When we invoke it this way, the _setState_ hook makes sure to bring us the last value.
+When we invoke it this way, the _setState_ hook ensure that the latest available value is being served.
 
 # About Basefactor + Lemoncode
 
