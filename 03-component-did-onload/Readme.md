@@ -4,29 +4,28 @@
 
 This example takes as a starting point the _02-use-state-object_ example.
 
-Let's start playing with another of React's core hooks: _useEffect_
+Let's start practicing with another React's core hook: _useEffect_
 
-This Hook allows us to get hooked on certain events in time and power
-run code.
+This Hook allows us to subscribe on certain events (check when the
+component is mounted, check when the component is unmounted, on
+every render, or when a given property is updated).
 
-Let's start with the most basic, execute a code just when a
+Let's start with the most basic, execute a given code when a
 component is mounted in the DOM.
 
-There are many operations that you want to execute right when it's loaded into
-the DOM of the browser your component (when it starts to be viewed), for
-Example loading a token from a client from a server REST API.
+A common scenario: you want to run some code when a component it's loaded into
+the DOM, for example loading a list of clients when the component is mounted.
 
-There are also operations that we want to be able to execute when a
-value, or in after each render.
+There can be scenarios when we need some code to be executed when a given
+property value changes or right after each render.
 
-What if those operations are not synchronous? For example I want
-pull a setTimeout or make a call to a server, this will return a promise, it is not safe at all to run this directly in a functional component
-since this is executed and destroyed, for this (manage side effects) we have
+There may be scenarios when all this operations are not synchronous? For instance I want making a call to a server rest api,
+this will return a promise, it is not safe at all to run this directly in a functional component
+since the functional component is executed and destroyed, to manage these side effects) we can make use of
 _React.useEffect_
 
-In this example we are going to see how to change a name, just when
-mount the component, then we'll simulate an asynchronous call
-using _setTimeout_.
+In this example we are going to simulate a call to a rest api, in order to retrieve a name (we will use
+_setTimeout_).
 
 ## Steps
 
@@ -36,9 +35,9 @@ First we copy the previous example, and do a _npm install_
 npm install
 ```
 
-- Let's open the _demo.js_ file, and overwrite it with the following content.
+- Let's open the _demo.tsx_ file, and overwrite it with the following content.
 
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```jsx
 import React from "react";
@@ -49,13 +48,13 @@ export const MyComponent = () => {
   return (
     <>
       <h4>{username}</h4>
-      <input value={username} onChange={e => setUsername(e.target.value)} />
+      <input value={username} onChange={(e) => setUsername(e.target.value)} />
     </>
   );
 };
 ```
 
-- If we run the sample, nothing will be shown (name is empty), what if we want
+- If we run the example, the name field will be empty, but we want
   to assign some value right when the component is mounted? We can make use of
   _React.useEffect_ passing as a second argument an empty array (that's important
   if we don't pass this the code inside the _useEffect_ would be executed on
@@ -124,4 +123,3 @@ We are an innovating team of Javascript experts, passionate about turning your i
 [Lemoncode](http://lemoncode.net/services/en/#en-home) provides training services.
 
 For the LATAM/Spanish audience we are running an Online Front End Master degree, more info: http://lemoncode.net/master-frontend
-
