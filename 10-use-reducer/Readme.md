@@ -2,7 +2,7 @@
 
 ## Resume
 
-This example taks as a starting point _09-pure-component-callback_.
+This example takes as a starting point _09-pure-component-callback_.
 
 In the previous sample we worked around the issue with the function
 that was getting updated on every render by using _useCallback_, this
