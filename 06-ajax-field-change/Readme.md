@@ -2,11 +2,11 @@
 
 ## Resume
 
-This example takes as a starting point the example \ _05-component-update-render.
+This example takes as a starting point the example \ \_05-component-update-render.
 
-Let's check a practical example, we have a search result list(this comes from a server), and we want each time we enter a change to a filtering input, send a request to server to get the new filtered list and display it.
+Let's simulate a real scenario, we have a search result list(we read this from a server source), and each time that we enter a change to a filtering input we want to send a request to the server to get the new filtered list and display it.
 
-As dessert we will check how to use Debounce (that is, wait a little that the user finishes typing to send the reuest, saving so unnecessary calls).
+As a bonus, we will check how to use Debounce (wait a little until the user stops typing to send the request, saving so unnecessary calls).
 
 # Steps
 
@@ -16,7 +16,8 @@ As dessert we will check how to use Debounce (that is, wait a little that the us
 npm install
 ```
 
-- Let's open the _demo.js_, and let's add an entry in the state that stores the current search filter, and another in which it stores a list of users.
+- Let's open the _demo.js_, and let's add an entry in the state that stores the current search filter, and another state in which we
+  are going to store a list of users.
 
 _./src/demo.tsx_
 
@@ -29,7 +30,7 @@ export const MyComponent = () => {
 
   return (
     <div>
-      <input value={filter} onChange={e => setFilter(e.target.value)} />
+      <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       <ul>
         {userCollection.map((user, index) => (
           <li key={index}>{user.name}</li>
@@ -40,7 +41,7 @@ export const MyComponent = () => {
 };
 ```
 
-- Now we want to fire an ajax request every time user types on the filter input.
+- Now we want to fire an _ajax request_ every time the user types on the filter input.
 
 _./src/demo.tsx_
 
@@ -59,11 +60,10 @@ export const MyComponent = () => {
   return (
 ```
 
-**BE CAREFUL!!! Typicode** works in a free heroku that falls asleep every X time :).
+**BE CAREFUL!!! Typicode** since we are hitting a free rest api it maybe down or asleep, maybe you will have to give some tries :).
 
-Let's try other APIs.
-
-This will impact to the code, we have to make a change and check what these api return, we will do this as an exercise.
+You can try as with other apis as well (you will need to take a look at the documention, some of them return slightly different
+response structures).
 
 https://rickandmortyapi.com/
 
@@ -85,11 +85,11 @@ npm start
 
 ## BONUS
 
-This is fine, but it isn't optimal, we usually want to triggerthe search just when the user has stopped typing to avoid making calls unnecessary.
+This is fine, but it isn't optimal, we usually want to trigger the search just when the user has stopped typing to avoid making unnecessary calls.
 
-We can download a library that implements a custom hook that does just that: https://github.com/xnimorz/use-debounce 
+We can download a library that implements a custom hook that just implements that behavior: https://github.com/xnimorz/use-debounce
 
-The only thing that we would have to do:
+Using this is a piece of cake:
 
 ```bash
 npm install use-debounce --save
