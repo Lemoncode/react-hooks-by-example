@@ -63,7 +63,7 @@ export const MyComponent: React.FC = () => {
   );
 ```
 
-- Si arrancamos la aplicación podemos ver como se muesra el nombre y apellido.
+- Si arrancamos la aplicación podemos ver como se muestra el nombre y apellido.
 
 - Ahora vamos al turrón, podríamos estar tentados de modificar directamente userInfo y
   ver que pasa, hacer algo así como (**SPOILER ALERT: ESTO ESTA MAL**):

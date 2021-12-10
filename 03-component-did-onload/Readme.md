@@ -28,7 +28,7 @@ In this example we are going to see how to change a name, just when
 mount the component, then we'll simulate an asynchronous call
 using _setTimeout_.
 
-## Step by Step
+## Steps
 
 First we copy the previous example, and do a _npm install_
 
