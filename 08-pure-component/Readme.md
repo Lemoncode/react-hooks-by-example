@@ -7,8 +7,8 @@ using _React.memo_
 
 # Steps
 
-- We will take as starting point sample _07-custom-hook_. Copy the content of the
-  project to a fresh folder an execute _npm install_.
+- We will take as starting point sample _07-custom-hook_. Let's copy the content of the
+  project into a fresh folder an execute _npm install_.
 
 ```bash
 npm install
