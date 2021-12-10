@@ -1,8 +1,8 @@
 # 09 Pure Components Callback
 
-In the previous sample we saw how to make a component to be pure using
+In the previous sample we saw how to make a component pure using
 _React.memo_, that's great, but when there's an issue
-what happens if we pass the function created inside function component to the child component?
+what happens if we pass a function created inside the functional component to the child component?
 That  function will be always different on every render thus
 the _memo_ won't take effect.
 
@@ -18,7 +18,7 @@ function unless we indicate any dependency (same approach as with _React.useEffe
 npm install
 ```
 
-- Let's open the _demo.tsx_. We will create a parent and a child component
+- Let's open the _demo.tsx_ file. We will create a parent and a child component
   (this time the child component will just reset the name content).
 
 _./src/demo.tsx_
@@ -101,7 +101,7 @@ const ResetValue = React.memo(props => {
 });
 ```
 
-- If we runt he example, we can see that the rerender is no longer launched in the component.
+- If we run he example, we can see that the rerender is no longer launched in the component.
 
 How does this work? _useCallback_ will return a function that was originally created, and it returns this instead of creating a new one in each render, we achive this by passing an empty array as a second argument(as we did with _React.useEffect_) and if we omit the second parameter, this function will be reevaluated after each render.
 
