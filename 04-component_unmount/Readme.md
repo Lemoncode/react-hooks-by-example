@@ -2,7 +2,7 @@
 
 ## Resume
 
-This example takes the _03-component-dom-onload_ example as a starting point.
+This example takes the _03-component-dom-onload_ example as starting point.
 
 In this example we are going to see how to free resources when we unmount a DOM component.
 
@@ -14,7 +14,7 @@ In this example we are going to see how to free resources when we unmount a DOM 
 npm install
 ```
 
-- We are going to create a component that shows or hides a text depending on of a boolean flag.
+- We are going to create a component that shows or hides a text depending on a boolean flag.
 
 Overwrite _demo.js_ file with the following content.
 
@@ -34,7 +34,7 @@ export const MyComponent = () => {
       </button>
     </>
   );
-}
+};
 ```
 
 At first the text is not displayed because _visible_ is false.
@@ -54,7 +54,7 @@ _./src/demo.tsx_
   );
 ```
 
-And if we instead of a \ _h4 \ _ \ _, we instantiate a component:
+Let's replace the basic element \ _h4 \ _ \ \_, and let's define a child component:
 
 ```diff
 + export const MyChildComponent = () => {
@@ -75,12 +75,13 @@ export const MyComponent = () => {
   );
 };
 ```
-- Now we have a children component that clicking on a button it's mount or dismount from the DOM.
+
+- Now we got a childr component that is mounted / unmounted from the dom when a user clicks on a button.
 
 How could we do to display a message on the console
 browser when the child component will be mounted?
-If we remember the previous example, it would be with _React.useEffect_.
-Do you dare to try it? Pause the video and try it :)
+If we remember the previous example, we can use _React.useEffect_.
+Before continue just give a try by yourself.
 
 We could do something like:
 
@@ -89,15 +90,15 @@ _./src/demo.tsx_
 ```diff
 export const MyChildComponent = () => {
 + React.useEffect(() => {
-+  console.log('El componente se acaba de montar en el DOM')
++  console.log('Component just mounted on the DOM')
 + }, [])
 +
   return <h4>Hello form child component</h4>;
 };
 ```
 
-- Now comes the interesting part, and if we want to show a message by the browser console when the component is unmounted from the DOM?  In the same function that we put as the first parameter we return the "cleanup" function ... _useEffect_ is going to save that function until I unmount the DOM to invoke it:
-
+- Now comes the interesting part, what if we want to show a message on the browser console when the component is unmounted from the DOM? Just
+  by adding in the return value of that _useEffect_ a function that will be called when the component is unmounted.
 
 _./src/demo.js_
 
@@ -108,7 +109,8 @@ export const MyChildComponent = () => {
 +   return () => console.log("El componente se acaba de desmontar del DOM");
   }, []);
 ```
-What can this do for me? Imagine that you open a connection to a websocket and you want to close it when the user hides the component, how do you free resources in an orderly manner? Here it is.
+
+Any useful scenarios? Imagine that you open a connection to a websocket and you want to close it when the user hides the component, how do you free resources in a proper way? By using this approach.
 
 # About Basefactor + Lemoncode
 
@@ -119,4 +121,3 @@ We are an innovating team of Javascript experts, passionate about turning your i
 [Lemoncode](http://lemoncode.net/services/en/#en-home) provides training services.
 
 For the LATAM/Spanish audience we are running an Online Front End Master degree, more info: http://lemoncode.net/master-frontend
-
