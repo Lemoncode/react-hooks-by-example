@@ -4,7 +4,7 @@
 
 We will take as starting point sample \_04-component-dom-unmount.
 
-In this example we will check how to use React.useEffect to execute a code right after each render.
+In this example we will check how to use React.useEffect in order to execute a given code right after each render.
 
 # Steps
 
@@ -14,10 +14,10 @@ In this example we will check how to use React.useEffect to execute a code right
 npm install
 ```
 
-- Let's open the _demo.js_, we will create a parent and child component as
+- Let's open the _demo.tsx_, we will create a parent and child component as
   we did in previous examples.
 
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```tsx
 import React from "react";
@@ -33,12 +33,12 @@ export const MyComponent = () => {
       </button>
     </>
   );
-}
+};
 
 const MyChildComponent = () => {
   const [userInfo, setUserInfo] = React.useState({
     name: "John",
-    lastname: "Doe"
+    lastname: "Doe",
   });
 
   return (
@@ -48,18 +48,18 @@ const MyChildComponent = () => {
       </h3>
       <input
         value={userInfo.name}
-        onChange={e => setUserInfo({ ...userInfo, name: e.target.value })}
+        onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
       />
       <input
         value={userInfo.lastname}
-        onChange={e => setUserInfo({ ...userInfo, lastname: e.target.value })}
+        onChange={(e) => setUserInfo({ ...userInfo, lastname: e.target.value })}
       />
     </div>
   );
 };
 ```
 
-- Now comes the interesting part by calling _React.useEffect_ without second
+- Now comes the interesting part: by calling _React.useEffect_ without a second
   parameter, the code inside _useEffect_ will be triggered right when the
   component is just mounted and on any update (clean up function will be called
   right before the effect is triggered again).
@@ -81,7 +81,8 @@ const MyChildComponent = () => {
 
   return (
 ```
-- If we execute we can check that this code is executed after each rendering of the component.
+
+- If we execute this, we can check that this code is executed after each render of the component.
 
 - We can also add a function to free up resources just before the next render is executed.
 
@@ -108,4 +109,3 @@ We are an innovating team of Javascript experts, passionate about turning your i
 [Lemoncode](http://lemoncode.net/services/en/#en-home) provides training services.
 
 For the LATAM/Spanish audience we are running an Online Front End Master degree, more info: http://lemoncode.net/master-frontend
-
