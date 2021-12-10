@@ -7,7 +7,7 @@ This example takes as its starting point the \ _06-ajax-field-change example.
 Hooks are cool, but our functional component seems to get cluttered, is
 there a way to extract functionality outside the functional component?
 and what's more important is there any chance to make it reusable for
-other components? Yups ! Custom hooks to the rescue.
+other components? Yups! Custom hooks to the rescue.
 
 # Steps
 
