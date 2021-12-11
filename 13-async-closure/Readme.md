@@ -2,44 +2,43 @@
 
 ## Resume
 
-This example takes the _12-set-state-func_ example as a starting point.
+This example takes the _12-set-state-func_ example as starting point.
 
-In the previous example we saw how to solve the problem of calls
-asynchronous, and the _setState_ taking old values, this is fine
-if there is only one variable in play, but if there is more than one, we can
-have problems, in order to solve this edge case, React provides us with the _userRef_ hook
-
-Let's check how it works.
+In the previous example we saw how to solve the issue of handling
+asynchronous calls and cope with frozen values, this can be a good method
+if we only depend on one state field, if we are facing more
+complex scenarios, we will need a more ellaborated solution,
+let's see how _useRef_ hook can help to tackle on this issues.
 
 ## Steps
 
-- First we copy the previous example, and do a _npm install_
+- First, let's copy the previous example, and do a _npm install_
 
 ```bash
 npm install
 ```
 
-- Let's go for the example, what are we going to do?
+- Let's get started, what are we going to do?
 
 Regarding data:
 
-- We are going to have a second counter, we save it in the state.
-- We will have a message to show how many seconds there are.
+- We are going to create a second counter, we save it in the state.
+- We will display a message to show how many seconds have passed.
 
 Regarding functionality:
 
-- When we assemble the component for the first time, the value of seconds will be 0.
-- When one second passes, we will set the value of seconds to 1.
+- When we mount the component for the first time, the value of the seconds state will be 0.
+- When one second passes, we will set the value of seconds state to 1.
 - When two seconds pass we will set the value of the message
-  (showing those seconds).
+  (this message will display the value stored in seconds state).
 
 In the component:
 
 - We show the number of seconds.
 - We show the message.
 
-> This case is made to check how _useRef_ works you could
-> solve in other, more optimal ways.
+> This case is made just to check how _useRef_ works you could
+> solve this using other approaches.
 
 ```tsx
 import React from "react";
@@ -72,16 +71,16 @@ If we weren't aware of the problem with closures, we would expect
 that the final message was "Total seconds: 1", but we will execute it and see that
 the message that appears on the screen is "Total seconds: 0"
 
-To solve this, the guys at Facebook provide us with the _useRef_ hook, this hook:
+To solve this, Facebook chaps provide us with the _useRef_ hook, this hook:
 
 - Stores a initial value (same as with useState).
-- Returns an object to us.
-- This object has a _current_ property which is a mutable variable
-  (here the value of the seconds would be stored), if we modify this value
-  in a future render, it will be counted in a past one (an asynchronous call.)
-- When another render comes, _useRef_ returns the same instance of the object.
+- Returns an object.
+- This object exposes a _current_ property which is a mutable variable
+  (the value of the seconds would be stored here), if we modify this value
+  in a future render, it will be available in past async call.
+- When another render is executed, _useRef_ returns the same instance of the object.
 
-Let's check it in action:
+Let's check this in action:
 
 _./src/demo.tsx_
 
@@ -116,17 +115,16 @@ export const MyComponent = () => {
 };
 ```
 
-- If we execute it, we will see how it now works correctly.
+- If we execute it, we will see how get now the expected behavior.
 
 ```bash
 npm start
 ```
 
-- This is very good, but do we have a way to avoid it? If we had
-  used an object yes, let's see how the SetState works using a
-  function to assign the value.
-
-- First we are going to encapsulate message and seconds in an object:
+- That's very cool, but if you have to use _useRef_ it can be a
+  code bad smell, there could be easier way to achieve what you
+  need, for instance we could just wrap the message, plus the
+  seconds in the same object / state:
 
 ```diff
 export const MyComponent = () => {
@@ -139,9 +137,8 @@ export const MyComponent = () => {
 + });
 ```
 
-
 - We are now going to change the content of the useEffect, pay attention to the setState
-  that we are going to use it as a function, giving us the last value:
+  that we are going to use it as a function, this will provide us with the last value:
 
 ```diff
 - const secondsRef = React.useRef(info.seconds);
@@ -162,7 +159,7 @@ export const MyComponent = () => {
   }, []);
 ```
 
-- And we update the render
+- Now that we are using the object we have to update the places where we bind the data in the markup.
 
 ```diff
   return (
@@ -176,8 +173,7 @@ export const MyComponent = () => {
   );
 ```
 
-
-- If we execute we will see how it works.
+- If we execute it we will see it working as well.
 
 ```bash
 npm start
