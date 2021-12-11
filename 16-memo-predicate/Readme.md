@@ -1,17 +1,18 @@
 # 15 Memo predicate
 
-In this sample we will enhance rendering performance hooking to 'shouldComponentUpdate'.
+In this example we will enhance rendering performance hooking to 'shouldComponentUpdate'.
 
 We are going to implement a customer satisfaction widget, based on smily faces, it will accept a range value (0 to 500), and the faces will have a range of values 0..99, 100..199, 200..299, 300..399, 400..500. We will only fire the render option whenever the value jumps into the next or previous range.
 
 # Steps
 
-- We will take as starting point sample _15-promise-unmounted_. Copy the content of the project to a fresh folder an execute _npm install_.
+- We will take as starting point sample _15-promise-unmounted_. Let's copy the content of the project to a fresh folder an execute _npm install_.
 
 ```bash
 npm install
 ```
 - We have to make a slight change in this example in our _webpack.config.js_
+
 ```diff
 ...
     {
@@ -23,7 +24,7 @@ npm install
 ...
 ```
 
-- Let's copy the five smiley faces (you can copy them from the sample implementation in github) _src/assets_.
+- Let's copy the five smiley faces (you can copy them from the sample implementation in github)  into the route _src/assets_.
 
 - Let's add the following content into the _src/styles.css_  css file to add the smileys styles:
 
@@ -65,7 +66,7 @@ npm install
 }
 ```
 
-- Let's change the component _src/demo.tsx_,  we will start by just adding something hardcoded in file:
+- Let's change the component _src/demo.tsx_,  we will start by just adding something hardcoded in the component:
 
 ```tsx
 import * as React from "react";
