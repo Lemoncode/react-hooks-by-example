@@ -15,7 +15,7 @@ List of examples:
   this as starting point)
 - [01-use-state](https://github.com/Lemoncode/react-hooks-by-example/tree/master/01-use-state): adding state (simple element) to a functional component.
 - [02-use-state-object](https://github.com/Lemoncode/react-hooks-by-example/tree/master/02-use-state-object): adding state (object) to a functional component.
-- [03-component-did-mount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/03-component-did-mount): executing some operations when a functional component gets mounted.
+- [03-component-did-mount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/03-component-did-onload): executing some operations when a functional component gets mounted.
 - [04-component-unmount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/04-component_unmount): executing cleanup code when a functional component gets unmounted.
 - [05-mount-did-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/05-mount-did-update): hooking to mount and component update events.
 - [06-ajax-field-change](https://github.com/Lemoncode/react-hooks-by-example/tree/master/06-ajax-field-change): triggering an ajax call whenever a given field gets updated.
