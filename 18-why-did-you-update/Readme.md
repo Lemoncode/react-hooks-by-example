@@ -22,11 +22,11 @@ export const MyComponent = () => {
   const [id, setId] = React.useState(0);
 
   const name = {
-    firstname: 'John',
-    lastname: 'Doe',
+    firstname: "John",
+    lastname: "Doe",
   };
 
-  return(
+  return (
     <div>
       <div>
         <MyChildComponent name={name} cont={cont} />
@@ -47,13 +47,12 @@ interface Name {
 }
 
 interface Props {
-  name: Name,
-  cont: number,
+  name: Name;
+  cont: number;
 }
 
-export const MyChildComponent: React.FC<Props> = React.memo(props => {
-  
-  return(
+export const MyChildComponent: React.FC<Props> = React.memo((props) => {
+  return (
     <div>
       {props.name.firstname} {props.name.lastname} cont: {props.cont}
     </div>
@@ -145,6 +144,7 @@ export const MyChildComponent = React.memo(props => {
 +  });
 +}
 ```
+
 - Start the example to test the hook.
 
 ```bash
@@ -155,7 +155,7 @@ npm start
 
 ![01-message-increment-id](./resources/01-message-increment-id.gif)
 
-- Thanks to our custom hook we have realized that the variable _name_ should be outside of _MyComponent_. If we modify _demo.tsx_ by putting the variable _name_ outside the parent component, the hook _useWhyDidYouUpdate_ will only launch a message in the console log when the button _Increment cont_ is clicked.
+- Thanks to our custom hook we have realized that the variable _name_ should be outside of _MyComponent_. If we modify _demo.tsx_ by putting the variable _name_ outside the parent component, the hook [useWhyDidYouUpdate](https://usehooks.com/useWhyDidYouUpdate/) will only launch a message in the console log when the button _Increment cont_ is clicked.
 
 _./src/demo.tsx_
 
