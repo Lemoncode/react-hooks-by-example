@@ -5,31 +5,28 @@
 This example takes as a starting point the example _14-use-ref-dom_.
 
 When we make a request to a rest api or similar (an AJAX call),
-React can generate a memory leak if we remove from the dom the component that has
+React can generate a memory leak if we remove the component from the DOM that has
 made the call while the request is in progress.
 
-What is the specific problem? That we try to do a _setState_ in a
+What is the specific problem? We try to do a _setState_ in a
 component that is no longer in the DOM (that space for the state has been freed).
 
-How can we avoid this? Detecting when a component is mount and dismount,
-In order not to make this very tedious, we can use hooks.
+How can we avoid this? Detecting when a component is mounted and dismounted, doing
+this check manually can be a pain in the neck, but we can get benefit of hooks
+to automate this check.
 
 ## Steps
 
-- First we copy the previous example, and do a _npm install_
+- First we copy the previous example, and execute a _npm install_
 
 ```bash
 npm install
 ```
 
+- Let's take as starting point an example where we show / hide a child
+  component that does an AJAX request.
 
-- Let's to base ourselves on an example in which in a child component we load
-  a list of data from a rest api, and this child component we can
-  decide to create or destroy it from the parent component.
-
-First we create the frame
-
-_./src/demo.js_
+_./src/demo.tsx_
 
 ```tsx
 import React from "react";
@@ -86,12 +83,11 @@ export const MyChildComponent = () => {
   return (
 ```
 
-
-- If you execute the example, write a char in the input and quickly press the button to hide the child component. In the console log you will see an error.
+- If you execute the example, try this: write a char in the input and quickly press the button to hide the child component. In the console log you will see an error.
 
 _Warning: In React you cannot update the status of a dismounted component. It is a no-op, but it is an indication of a memory leak in your application. To fix this, cancel all subscriptions and asynchronous tasks in a cleanup function in a useEffect._
 
-- We can detect when a component has been unmounted using a Ref flag.
+- We can detect when a component has been unmounted using a _useRef_ hook.
 
 ```diff
 export const MyChildComponent = () => {
@@ -124,7 +120,7 @@ Then we can resolve our _fetch_ call as follows:
   }, [filter]);
 ```
 
-- Repeating this in each component we make can be a bit of a drag, couldn't we make it more generic?
+- Repeating this in each component can add unnecessary code that gets repeated on an on, couldn't we make it more generic?
   Let's give it a spin:
 
 ```diff
