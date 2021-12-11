@@ -26,14 +26,13 @@ List of examples:
 - [10-use-reducer](https://github.com/Lemoncode/react-hooks-by-example/tree/master/10-use-reducer): _useReducer_ effect, including dispatch.
 - [11-use-context](https://github.com/Lemoncode/react-hooks-by-example/tree/master/11-use-context): using the _useContext_ hook to get access to the context in one line of code.
 - [12-set-state-func](https://github.com/Lemoncode/react-hooks-by-example/tree/master/12-set-state-func): Whe calling _setState_ how to ensure we are
-using the latest state value.
-
-- [12-async-closure](https://github.com/Lemoncode/react-hooks-by-example/tree/master/12-async-closure): advanced case, getting fresh data from _useState_ on callbacks.
-- [13-promise-unmounted](https://github.com/Lemoncode/react-hooks-by-example/tree/master/13-promise-unmounted): tracking when component is mounted/unmounted to avoid perform a state update on an unmounted component.
-- [14-useref-dom](https://github.com/Lemoncode/react-hooks-by-example/tree/master/14-useref-dom): using _useRef_ hook to access a DOM element child.
-- [16-memo-predicate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/15-memo-predicate): enhancing rendering performance hooking to 'shouldComponentUpdate'.
-- [17-use-debug-value](https://github.com/Lemoncode/react-hooks-by-example/tree/master/16-use-debug-value): using built-in hook _useDebugValue_.
-- [18-why-did-you-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/17-why-did-you-update): implementing a custom hook to avoid unnecesary re-renders.
+  using the latest state value.
+- [13-async-closure](https://github.com/Lemoncode/react-hooks-by-example/tree/master/13-async-closure): advanced case, getting fresh data from _useState_ on callbacks.
+- [14-useref-dom](https://github.com/Lemoncode/react-hooks-by-example/tree/master/14-use-ref-dom): using _useRef_ hook to access a DOM element child.
+- [15-promise-unmounted](https://github.com/Lemoncode/react-hooks-by-example/tree/master/15-promise-unmounted): tracking when component is mounted/unmounted to avoid perform a state update on an unmounted component.
+- [16-memo-predicate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/16-memo-predicate): enhancing rendering performance hooking to 'shouldComponentUpdate'.
+- [17-use-debug-value](https://github.com/Lemoncode/react-hooks-by-example/tree/master/17-use-debug-value): using built-in hook _useDebugValue_.
+- [18-why-did-you-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/18-why-did-you-update): implementing a custom hook to avoid unnecesary re-renders.
 
 # About Basefactor + Lemoncode
 
