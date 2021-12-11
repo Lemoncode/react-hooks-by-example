@@ -1,7 +1,7 @@
 # 14 React.useRef DOM
 
 In the previous example we introduced the hook _userRef_, in this example
-we are going to use it to access a node of the dom.
+we are going to use it to access a node of the DOM.
 
 # Steps
 
@@ -12,7 +12,7 @@ we are going to use it to access a node of the dom.
 npm install
 ```
 
-- In _demo.js_ we paste the following code (note that here we define
+- In _demo.tsx_ we paste the following code (note that here we define
   the _useRef_ and associate it in the _div_ container)
 
 _./src/demo.tsx_
@@ -43,7 +43,7 @@ _./styles.css_
 ```
 
 
-- In this example we are going to show the current width of the container using the associated _ref_ to this element of _dom_
+- In this example we are going to show the current width of the container using the associated _ref_ to the element of the _dom_
 
 ```diff
 import React from "react";
