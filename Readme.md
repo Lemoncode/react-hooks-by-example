@@ -17,7 +17,7 @@ List of examples:
 - [02-use-state-object](https://github.com/Lemoncode/react-hooks-by-example/tree/master/02-use-state-object): adding state (object) to a functional component.
 - [03-component-did-mount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/03-component-did-onload): executing some operations when a functional component gets mounted.
 - [04-component-unmount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/04-component_unmount): executing cleanup code when a functional component gets unmounted.
-- [05-mount-did-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/05-mount-did-update): hooking to mount and component update events.
+- [05-mount-did-update](https://github.com/Lemoncode/react-hooks-by-example/tree/master/05-component-update-render): hooking to mount and component update events.
 - [06-ajax-field-change](https://github.com/Lemoncode/react-hooks-by-example/tree/master/06-ajax-field-change): triggering an ajax call whenever a given field gets updated.
 - [07-custom-hooks](https://github.com/Lemoncode/react-hooks-by-example/tree/master/07-custom-hook): creating our custom hook, great to simplify components and get reusable assets.
 - [08-pure-component](https://github.com/Lemoncode/react-hooks-by-example/tree/master/08-pure-component): creating pure functional components.
@@ -25,6 +25,9 @@ List of examples:
   in their props.
 - [10-use-reducer](https://github.com/Lemoncode/react-hooks-by-example/tree/master/10-use-reducer): _useReducer_ effect, including dispatch.
 - [11-use-context](https://github.com/Lemoncode/react-hooks-by-example/tree/master/11-use-context): using the _useContext_ hook to get access to the context in one line of code.
+- [12-set-state-func](https://github.com/Lemoncode/react-hooks-by-example/tree/master/12-set-state-func): Whe calling _setState_ how to ensure we are
+using the latest state value.
+
 - [12-async-closure](https://github.com/Lemoncode/react-hooks-by-example/tree/master/12-async-closure): advanced case, getting fresh data from _useState_ on callbacks.
 - [13-promise-unmounted](https://github.com/Lemoncode/react-hooks-by-example/tree/master/13-promise-unmounted): tracking when component is mounted/unmounted to avoid perform a state update on an unmounted component.
 - [14-useref-dom](https://github.com/Lemoncode/react-hooks-by-example/tree/master/14-useref-dom): using _useRef_ hook to access a DOM element child.
