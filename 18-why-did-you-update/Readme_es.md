@@ -1,3 +1,11 @@
+<div align="right">
+  
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="español" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/18-why-did-you-update/Readme_es.md)
+[<img src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/18-why-did-you-update/Readme.md)
+
+</div>
+
+
 # 18 Why Did You Update
 
 Tal y como hemos visto en ejemplos anteriores, usando el componente de orden superior _React.memo_ evitamos renderizar un componente cuando las mismas props dan el mismo resultado. Pero, ¿Y si todavía ves renderizados que parecen innecesarios? Puedes usar un custom hook que te permite ver que props están causando que el componente se vuelva a renderizar. En este ejemplo aprenderemos como implementarlo.
