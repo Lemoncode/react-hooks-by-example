@@ -6,7 +6,7 @@
 </div>
 
 
-# 17 Why Did You Update
+# 18 Why Did You Update
 
 As we have seen in previous examples, using the higher order component _React.memo_ we avoid rendering a component when the same props give the same result. But what if you still see renderings that seem unnecessary? You can use a custom hook that allows you to see what props are causing the component to re-render. In this example we will learn how to implement it.
 
