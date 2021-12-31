@@ -1,3 +1,11 @@
+<div align="right">
+  
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="spanish" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/18-why-did-you-update/Readme_es.md)
+[<img src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="english" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/Readme.md)
+
+</div>
+
+
 # 17 Why Did You Update
 
 As we have seen in previous examples, using the higher order component _React.memo_ we avoid rendering a component when the same props give the same result. But what if you still see renderings that seem unnecessary? You can use a custom hook that allows you to see what props are causing the component to re-render. In this example we will learn how to implement it.
