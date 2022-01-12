@@ -6,7 +6,7 @@ Starting point for the rest of examples.
 
 Is just a blank project created using create-react-app.
 
-Hop into 01 use state Readme.md and start with the fun :).
+Hop into 01-use-state Readme.md and start with the fun :).
 
 # About Basefactor + Lemoncode
 

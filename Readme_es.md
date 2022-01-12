@@ -11,7 +11,7 @@ Cada ejemplo:
 
 Listado de ejemplos:
 
-- [00-boiler-plate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/00-boilerplate): punto de partida, simplemente crea un proyecto vacío con create-react-app (todos los ejemplos tomarán este ejemplo como punto de partida)
+- [00-boiler-plate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/00-boilerplate): punto de partida, simplemente crea un proyecto vacío con create-react-app (todos los ejemplos tomarán este ejemplo como punto de partida).
 - [01-use-state](https://github.com/Lemoncode/react-hooks-by-example/tree/master/01-use-state): añadiendo estado (elemento simple) a un componente funcional.
 - [02-use-state-object](https://github.com/Lemoncode/react-hooks-by-example/tree/master/02-use-state-object): añadiendo estado (objeto) a un componente funcional.
 - [03-component-did-mount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/03-component-did-onload): ejecutando algunas operaciones cuando un componente funcional se monta.
