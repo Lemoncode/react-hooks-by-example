@@ -20,7 +20,7 @@ function unless we indicate any dependency (same approach as with _React.useEffe
 
 # Steps
 
-- We will take as starting point sample [_08-pure-component_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component/Readme.md). Copy the content of the
+- We will take as starting point sample [_08-pure-component_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component). Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
