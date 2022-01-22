@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes the [_03-component-dom-onload_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/03-component-did-onload/Readme.md) example as starting point.
+This example takes the [_03-component-dom-onload_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/03-component-did-onload) example as starting point.
 
 In this example we are going to see how to free resources when we unmount a DOM component.
 
