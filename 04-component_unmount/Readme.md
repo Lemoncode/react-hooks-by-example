@@ -1,8 +1,17 @@
+[<img align="left" src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png" alt="español" width="170"/>](https://lemoncode.net/) 
+
+
+[<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount/Readme_es.md)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount/Readme.md)
+  
+<br>
+<br>
+
 # 04 Component unmount
 
 ## Resume
 
-This example takes the _03-component-dom-onload_ example as starting point.
+This example takes the [_03-component-dom-onload_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/03-component-did-onload/Readme.md) example as starting point.
 
 In this example we are going to see how to free resources when we unmount a DOM component.
 
