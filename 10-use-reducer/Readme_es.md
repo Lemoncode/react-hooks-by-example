@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_09-pure-component-callback_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback/Readme_es.md).
+Este ejemplo toma como punto de partida el ejemplo [_09-pure-component-callback_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback).
 
 Ya hemos visto la potencia de los hooks, pero en ciertos escenarios en los
 que puedes tener mucha lógica y muchos niveles de subcomponentes, pueden que te lleve a tener problemas de mantenibilidad, para ciertos escenarios podemos hacer uso del hook _useReducer_, inspirado en el patrón _Redux_.
