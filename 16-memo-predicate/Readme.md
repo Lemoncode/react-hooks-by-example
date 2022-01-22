@@ -16,7 +16,7 @@ We are going to implement a customer satisfaction widget, based on smily faces, 
 
 # Steps
 
-- We will take as starting point sample _15-promise-unmounted_. Let's copy the content of the project to a fresh folder an execute _npm install_.
+- We will take as starting point sample [_15-promise-unmounted_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/15-promise-unmounted). Let's copy the content of the project to a fresh folder an execute _npm install_.
 
 ```bash
 npm install
