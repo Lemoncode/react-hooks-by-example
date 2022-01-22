@@ -15,7 +15,7 @@ As we have seen in previous examples, using the higher order component _React.me
 
 # Steps
 
-- We will take as a starting point the previous example _17-use-debug-value_. Copy the contents of the project to a new folder and run _npm install_.
+- We will take as a starting point the previous example [_17-use-debug-value_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/17-use-debug-value). Copy the contents of the project to a new folder and run _npm install_.
 
 ```bash
 npm install
