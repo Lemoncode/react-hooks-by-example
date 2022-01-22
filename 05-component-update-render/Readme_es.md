@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_04-component-dom-unmount_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount/Readme.md).
+Este ejemplo toma como punto de partida el ejemplo [_04-component-dom-unmount_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount/Readme_es.md).
 
 En este ejemplo vamos a ver como usar React.useEffect para ejecutar
 un código justo después de cada renderizado.
