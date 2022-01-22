@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes as a starting point [_09-pure-component-callback_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback/Readme.md).
+This example takes as a starting point [_09-pure-component-callback_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback).
 
 In the previous sample we worked around the issue with the function
 that was getting updated on every render by using _useCallback_, this
