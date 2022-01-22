@@ -15,7 +15,7 @@ vamos a usarlo para acceder a un nodo del dom.
 
 # Pasos
 
-- Tomamos como punto de partida _13-async-closure_, copiamos el contenido
+- Tomamos como punto de partida [_13-async-closure_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/13-async-closure), copiamos el contenido
   y hacemos un _npm install_.
 
 ```bash
