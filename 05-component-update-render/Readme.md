@@ -12,7 +12,7 @@
 
 ## Resume
 
-We will take as starting point sample [_04-component-dom-unmount_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount/Readme.md).
+We will take as starting point sample [_04-component-dom-unmount_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount).
 
 In this example we will check how to use React.useEffect in order to execute a given code right after each render.
 
