@@ -16,7 +16,7 @@ Punto de partida para el resto de ejemplos.
 
 Es simplemente un proyecto en blanco usando webpack.
 
-Salta a  [01 use state Readme.md](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme.md) y empieza la diversión :).
+Salta a  [01 use state](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme_es.md) y empieza la diversión :).
 
 # ¿Te apuntas a nuestro máster?
 
