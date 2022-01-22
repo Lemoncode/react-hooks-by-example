@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_05-component-update-render_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/05-component-update-render/Readme.md).
+Este ejemplo toma como punto de partida el ejemplo [_05-component-update-render_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/05-component-update-render/Readme_es.md).
 
 Pasamos a ver un ejemplo práctico, tenemos un listado de resultado de busqueda
 (esto viene de un servidor), y queremos que cada vez que introduzcamos un
