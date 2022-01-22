@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes the [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme.md) as a starting point.
+This example takes the [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state) as a starting point.
 
 In the previous example we stored a string in the state, but
 ...do we need to use a _useState_ per each basic fild, can we store an object using
