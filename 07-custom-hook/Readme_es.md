@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_06-ajax-field-change_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/06-ajax-field-change/Readme.md).
+Este ejemplo toma como punto de partida el ejemplo [_06-ajax-field-change_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/06-ajax-field-change/Readme_es.md).
 
 Esto de los hooks está muy bien, pero si empezamos a usarlo en proyectos
 reales, nos podemos encontrar que nuestros componente funcionales pueden
