@@ -12,7 +12,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_00-boiler-plate_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/00-boilerplate/Readme.md).
+Este ejemplo toma como punto de partida el ejemplo [_00-boiler-plate_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/00-boilerplate/Readme_es.md).
 
 Vamos a crear un componente que por un lado muestre un nombre en
 un **h4**, y por otro permita editarlo utilizando un **input**.
