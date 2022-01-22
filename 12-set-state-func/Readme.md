@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes the [_11-use-context_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/11-use-context/Readme.md) example as a starting point.
+This example takes the [_11-use-context_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/11-use-context) example as a starting point.
 
 ### Short explanation
 
