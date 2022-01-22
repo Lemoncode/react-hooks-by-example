@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_10-use-reducer_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/10-use-reducer/Readme_es.md).
+Este ejemplo toma como punto de partida el ejemplo [_10-use-reducer_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/10-use-reducer).
 
 Uno de los puntos fuertes de React es que conviertes tu componentes en cajas
 negras, se conectan al exterior mediante un contrato que son las Props, esto
