@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_03-component-dom-onload_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/03-component-did-onload/Readme_es.md).
+Este ejemplo toma como punto de partida el ejemplo [_03-component-dom-onload_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/03-component-did-onload).
 
 En este ejemplo vamos a ver como liberar recursos cuando desmontamos un
 componente del DOM.
