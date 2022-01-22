@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes as a starting point the example [_05-component-update-render_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/05-component-update-render/Readme.md).
+This example takes as a starting point the example [_05-component-update-render_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/05-component-update-render).
 
 Let's simulate a real scenario, we have a search result list(we read this from a server source), and each time that we enter a change to a filtering input we want to send a request to the server to get the new filtered list and display it.
 
