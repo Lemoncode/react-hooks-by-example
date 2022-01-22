@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes as its starting point the [_06-ajax-field-change_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/06-ajax-field-change/Readme.md) example.
+This example takes as its starting point the [_06-ajax-field-change_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/06-ajax-field-change) example.
 
 Hooks are cool, but our functional component seems to get cluttered, is
 there a way to extract functionality outside the functional component?
