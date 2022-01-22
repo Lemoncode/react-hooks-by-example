@@ -15,7 +15,7 @@ The internal hook _useDebugValue_ is useful for debugging custom hooks using the
 
 # Steps
 
-- We will take as a starting point the example _16-memo-predicate_. Copy the contents of the project to a new folder and run _npm install_.
+- We will take as a starting point the example [_16-memo-predicate_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/16-memo-predicate). Copy the contents of the project to a new folder and run _npm install_.
 
 ```bash
 npm install
