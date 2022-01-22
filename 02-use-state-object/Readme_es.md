@@ -12,7 +12,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme.md).
+Este ejemplo toma como punto de partida el ejemplo [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme_es.md).
 
 En el ejemplo anterior almacenabamos un string en el estado, pero
 no todo son tipos básicos, ¿Podemos almacenar un objeto utilizando
