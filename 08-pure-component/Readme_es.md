@@ -2,7 +2,7 @@
 
 
 [<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component/Readme_es.md)
-[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component/Readme.md)
   
 <br>
 <br>
@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_07-custom-hook_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/07-custom-hook/Readme_es.md).
+Este ejemplo toma como punto de partida el ejemplo [_07-custom-hook_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/07-custom-hook).
 
 Hay veces en las que nos hace falta hilar fino y sólo volver a repintar un componente si sus propiedades han cambiado, si trabajamos con estructuras inmutables sólo tenemos que hacer un shallow compare.
 
