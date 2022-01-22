@@ -1,8 +1,18 @@
+
+[<img align="left" src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png" alt="español" width="170"/>](https://lemoncode.net/) 
+
+
+[<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/05-component-update-render/Readme_es.md)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/05-component-update-render/Readme.md)
+  
+<br>
+<br>
+
 # 05 Component update render
 
 ## Resume
 
-We will take as starting point sample \_04-component-dom-unmount.
+We will take as starting point sample [_04-component-dom-unmount_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/04-component_unmount/Readme.md).
 
 In this example we will check how to use React.useEffect in order to execute a given code right after each render.
 
