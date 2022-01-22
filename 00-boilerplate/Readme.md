@@ -16,7 +16,7 @@ Starting point for the rest of examples.
 
 It is just a blank project created using create-react-app.
 
-Hop into [01 use state Readme.md](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme.md) and start with the fun :).
+Hop into [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state/Readme.md) and start with the fun :).
 
 # About Basefactor + Lemoncode
 
