@@ -1,3 +1,12 @@
+[<img align="left" src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png" alt="español" width="170"/>](https://lemoncode.net/) 
+
+
+[<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback/Readme_es.md)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback/Readme.md)
+  
+<br>
+<br>
+
 # 09 Pure Components Callback
 
 In the previous sample we saw how to make a component pure using
@@ -11,7 +20,7 @@ function unless we indicate any dependency (same approach as with _React.useEffe
 
 # Steps
 
-- We will take as starting point sample _00 boilerplate_. Copy the content of the
+- We will take as starting point sample [_00 boilerplate_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/00-boilerplate/Readme.md). Copy the content of the
   project to a fresh folder an execute _npm install_.
 
 ```bash
