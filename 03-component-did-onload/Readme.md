@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes as a starting point the [_02-use-state-object_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/02-use-state-object/Readme.md) example.
+This example takes as a starting point the [_02-use-state-object_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/02-use-state-object) example.
 
 Let's start practicing with another React's core hook: _useEffect_
 
