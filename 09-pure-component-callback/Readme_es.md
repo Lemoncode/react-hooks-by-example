@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo [_08-pure-component_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component/Readme.md).
+Este ejemplo toma como punto de partida el ejemplo [_08-pure-component_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/08-pure-component/Readme_es.md).
 
 ## Paso a Paso
 
