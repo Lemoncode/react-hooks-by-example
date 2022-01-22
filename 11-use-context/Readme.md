@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes the [_10-use-reducer_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/10-use-reducer/Readme.md) example as a starting point.
+This example takes the [_10-use-reducer_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/10-use-reducer) example as a starting point.
 
 One of the strengths of React is that you turn you components into black boxes, they are connected to the outside by means of a contract that are the Props, this makes React very robust and specific components can easily be promoted to reusable.
 
