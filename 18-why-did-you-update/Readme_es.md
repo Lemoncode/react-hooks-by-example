@@ -16,7 +16,7 @@ Tal y como hemos visto en ejemplos anteriores, usando el componente de orden sup
 
 # Pasos
 
-- Tomaremos como punto de partida el ejemplo anterior _17-use-debug-value_. Copia el contenido del proyecto a una carpeta nueva y ejecuta _npm install_.
+- Tomaremos como punto de partida el ejemplo anterior [_17-use-debug-value_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/17-use-debug-value). Copia el contenido del proyecto a una carpeta nueva y ejecuta _npm install_.
 
 ```bash
 npm install
