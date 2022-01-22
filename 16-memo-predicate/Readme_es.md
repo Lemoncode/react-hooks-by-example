@@ -16,7 +16,7 @@ Vamos a implementar un widget de satisfacción de clientes, basado en caras con 
 
 # Pasos
 
-- Tomaremos como punto de partida el ejemplo _15-promise-unmounted_. Copia el contenido del proyecto a una carpeta nueva y ejecuta _npm install_.
+- Tomaremos como punto de partida el ejemplo [_15-promise-unmounted_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/15-promise-unmounted). Copia el contenido del proyecto a una carpeta nueva y ejecuta _npm install_.
 
 ```bash
 npm install
