@@ -16,7 +16,7 @@ using _React.memo_
 
 # Steps
 
-- We will take as starting point sample [_07-custom-hook_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/07-custom-hook/Readme.md). Let's copy the content of the
+- We will take as starting point sample [_07-custom-hook_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/07-custom-hook). Let's copy the content of the
   project into a fresh folder an execute _npm install_.
 
 ```bash
