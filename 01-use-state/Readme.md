@@ -11,7 +11,7 @@
 
 ## Resume
 
-This example takes the [_00-boiler-plate_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/00-boilerplate/Readme.md) example as a starting point.
+This example takes the [_00-boiler-plate_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/00-boilerplate) example as a starting point.
 
 Let's start by creating a component that displays a name in an **h4**,
 and can be edited using an **input**.
