@@ -13,7 +13,7 @@
 
 ## Resume
 
-This example takes as a starting point the example _14-use-ref-dom_.
+This example takes as a starting point the example [_14-use-ref-dom_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/14-use-ref-dom).
 
 When we make a request to a rest api or similar (an AJAX call),
 React can generate a memory leak if we remove the component from the DOM that has
