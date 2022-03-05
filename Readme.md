@@ -17,15 +17,15 @@ Set of step by step guide examples covering React Hooks, from start to advanced 
 
 About this examples:
 
-- Each example is focused in a topic (simple and straightforward).
-- Each example contains a Readme.md with an step by step guide to reproduce it.
+- Each example is focused on a topic (simple and straightforward).
+- Each example contains a Readme.md with a step by step guide to reproduce it.
 
 # Examples implemented
 
 List of examples:
 
 - [00-boiler-plate](https://github.com/Lemoncode/react-hooks-by-example/tree/master/00-boilerplate): starting point, just a blank create-react-app project (all examples will take
-  this as starting point)
+  this as starting point).
 - [01-use-state](https://github.com/Lemoncode/react-hooks-by-example/tree/master/01-use-state): adding state (simple element) to a functional component.
 - [02-use-state-object](https://github.com/Lemoncode/react-hooks-by-example/tree/master/02-use-state-object): adding state (object) to a functional component.
 - [03-component-did-mount](https://github.com/Lemoncode/react-hooks-by-example/tree/master/03-component-did-onload): executing some operations when a functional component gets mounted.

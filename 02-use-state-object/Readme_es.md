@@ -14,15 +14,15 @@
 
 Este ejemplo toma como punto de partida el ejemplo [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state).
 
-En el ejemplo anterior almacenabamos un string en el estado, pero
-no todo son tipos básicos, ¿Podemos almacenar un objeto utilizando
-useState? Claro que sí, lo único que cuando queremos introducir
+En el ejemplo anterior almacenábamos un string en el estado, pero
+no todo son tipos básicos. ¿Podemos almacenar un objeto utilizando
+_useState_? Claro que sí, lo único que cuando queremos introducir
 cambios en el estado tenemos que seguir el principio de inmutabilidad
 y no modificar el objeto original.
 
 ## Paso a Paso
 
-- Primero copiamos el ejemplo anterior, y hacemos un _npm install_
+- Primero copiamos el ejemplo anterior, y hacemos un _npm install_.
 
 ```bash
 npm install
@@ -43,8 +43,8 @@ export const MyComponent: React.FC = () => {
 ```
 
 Así creamos un estado al que le almacenamos el objeto, pero nos vendría
-bien tener algo de strong typing, que nos ayude a encontrar fallos tontos
-del tipo me olvide poner la "t" en lastname.
+bien tener algo de strong typing que nos ayude a encontrar fallos tontos
+del tipo _me olvide poner la "t" en lastname_.
 
 ```diff
 + interface UserInfo {
@@ -73,10 +73,10 @@ export const MyComponent: React.FC = () => {
   );
 ```
 
-- Si arrancamos la aplicación podemos ver como se muestra el nombre y apellido.
+- Si arrancamos la aplicación podemos ver cómo se muestra el nombre y apellido.
 
 - Ahora vamos al turrón, podríamos estar tentados de modificar directamente userInfo y
-  ver que pasa, hacer algo así como (**SPOILER ALERT: ESTO ESTA MAL**):
+  ver qué pasa, hacer algo así como (**SPOILER ALERT: ESTO ESTA MAL**):
 
 ```diff
   return (
@@ -120,13 +120,13 @@ que vamos a introducir una modificación.
   );
 ```
 
-Ahora sí que funciona, cuando queremos actualizar _userInfo_ hacemos
+Ahora sí que funciona. Cuando queremos actualizar _userInfo_ hacemos
 la petición para actualizar el estado y le creamos un objeto nuevo
-copiando todas las propiedades del antiguo y como último pasa machacamos
+copiando todas las propiedades del antiguo y, como último paso, machacamos
 el valor de la propiedad que ha cambiado.
 
 - Vamos a hacer lo mismo para lastname, si quieres dale a la pausa en este
-  video e intentalo tu por tu cuenta.
+  video e inténtalo tu por tu cuenta.
 
 ```diff
   return (

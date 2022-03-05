@@ -13,22 +13,21 @@
 
 This example takes the [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state) as a starting point.
 
-In the previous example we stored a string in the state, but
-...do we need to use a _useState_ per each basic fild, can we store an object using
-useState? Yes you can, but we have to take into consideration that updates on this
+In the previous example we stored a string in the state, but... we don't use _useState_ just for basic types. Can we store an object using
+_useState_? Yes we can, but we have to take into consideration that updates on this
 object must be done following the principle of immutability (we never
 add an update on a given object, we create a new one).
 
 ## Steps
 
-- First we copy the previous example, and execute a _npm install_
+- First we copy the previous example, and execute a _npm install_.
 
 ```bash
 npm install
 ```
 
 - Let's go store in the state an object that has the name
-  and last name of a given user, we can write something like:
+  and last name of a given user. We can write something like:
 
 _./src/demo.tsx_
 
@@ -41,9 +40,9 @@ export const MyComponent: React.FC = () => {
 +  });
 ```
 
-By doing this we create a state that stores the object, but it would a good idea to
-get benefit of using TypeScript and add strong typing, this will help us finding silly bugs
-like _Ouch ! I forgot to type the "t" in lastname_.
+By doing this we create a state that stores the object, but it would be a good idea to
+get benefit of using TypeScript and add strong typing. This will help us finding silly bugs
+like _Ouch! I forgot to type the "t" in lastname_.
 
 ```diff
 + interface UserInfo {
@@ -59,7 +58,7 @@ export const MyComponent: React.FC = () => {
   });
 ```
 
-- Coold, now that we got our object stored and typed, let's display the user name and lastname.
+- Cool, now that we have our object stored and typed, let's display the user's name and lastname.
 
 ```diff
   return (
@@ -71,9 +70,9 @@ export const MyComponent: React.FC = () => {
   );
 ```
 
-If we start the application we can see how the name and surname are displayed.
+If we start the application we can see how the name and lastname are displayed.
 
-- Let's jump on the main thing, updating the name field..., we might be tempted to update userInfo, but this won't
+- Let's jump on the main thing, updating the name field... We might be tempted to update userInfo, but this won't
   work, anyway let's give a try (**SPOILER ALERT: THIS IS WRONG**):
 
 ```diff
@@ -94,8 +93,8 @@ This is not going to work, we are again applying a Java / Angular approach,
 we are trying to modify something that is alive only when the function is being
 executed, once the component is rerended this value will be lost.
 
-- The way to do this is by creating a new objecto and assigning it using the _setState_
-  method, in order to do this copy we use the spread operator (by doing this all the fields
+- The way to do this is by creating a new object and assigning it using the _setState_
+  method. In order to do this copy we use the spread operator (by doing this, all the fields
   that doesn't change are just passed as they are, they are not recreated).
 
 ```diff
@@ -153,7 +152,7 @@ entry for the one that had changes.
 ```
 
 Now we can test and see that we can update both the name and
-surname.
+lastname.
 
 # About Basefactor + Lemoncode
 

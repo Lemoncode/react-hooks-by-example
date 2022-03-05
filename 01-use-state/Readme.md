@@ -18,7 +18,7 @@ and can be edited using an **input**.
 
 ## Steps
 
-- First we copy the previous example, and do a _npm install_
+- First we copy the previous example, and do a _npm install_.
 
 ```bash
 npm install
@@ -45,14 +45,14 @@ export const MyComponent: React.FC = () => {
 
 - Using the reserved word _export_ we can expose this file to other modules.
 
-- It is not strictly necessary to type it with _React.FC_ (Function Component), but It's a good idea, sticking to _Typescript_ will help us to have
+- It is not strictly necessary to type it with _React.FC_ (Function Component), but it's a good idea, sticking to _Typescript_ will help us to have
   fewer headaches in the future.
 
 - The component is just a function that returns elements from React.
   Notice that in this case we have not added _Props_ since it does not consume any.
 
 - Let's go for the interesting part, surely if we use the Java on Angular
-  mindset, we would ty implementing something like (**IMPORTANT: THIS IS WRONG**).
+  mindset, we would ty implementing something the following (**IMPORTANT: THIS IS WRONG**).
 
 ```diff
 export const MyComponent : React.FC = () => {
@@ -73,13 +73,13 @@ export const MyComponent : React.FC = () => {
 If you come to a React project and you come across code like this, it's a bad smell, looks like the person that have coded it did not take the time to learn the basics of this library, let's see why:
 
 - When creating a variable, each time the component is repainted, the value
-  of the variable _myName_ will always be _John Doe_, why? the component
+  of the variable _myName_ will always be _John Doe_. Why? the component
   is just function that is executed over and over on each repaint.
 
-- If we asign a value directly to the _input_ contro, we are skipping to
+- If we asign a value directly to the _input_ we are skipping two
   main pillars of React: unidirection flow and asynchronous state assignment.
 
-If you want to see it in action (input not working) you just have to add it to the _app.tsx_ file
+If you want to see it in action (input not working) you just have to add it to the _app.tsx_ file.
 
 _./src/app.tsx_
 
@@ -93,7 +93,7 @@ export const App = () => {
 };
 ```
 
-Ok ... How can I handle this? Using React hooks! Let's take a look to _React.useState_, this hook:
+Ok... How can I handle this? Using React hooks! Let's take a look to _React.useState_, this hook:
 
 - Is initialized with a default value.
 
@@ -110,7 +110,7 @@ have a _setName_ or a _setLastname_?
 
 - Let's go and code this component using _Hooks_.
 
-First we make use of the _setState_
+First we make use of the _setState_.
 
 _./src/demo.tsx_
 
@@ -120,7 +120,7 @@ export const MyComponent: React.FC = () => {
 +  const [myName, setMyName] = React.useState('John Doe');
 ```
 
-- As we have named our _getter_ _myName_ it works for us
+- As we have named our _getter_ _myName_, it works for us
   to both to display the name in the _h4_, as well as in the
   _input_
 
@@ -130,8 +130,8 @@ export const MyComponent: React.FC = () => {
 
 What do we have here?
 
-- \*_e_: argument of the _eventHandler_, gives us information about the event, exposes a series of properties ..
-- **e.target**: which DOM element generated the event.
+- \*_e_: argument of the _eventHandler_, gives us information about the event, exposes a series of properties.
+- **e.target**: which DOM Element generated the event.
 - **e.target.value**: what value does this element have (the value property
   of the DOM Element that generated the event).
 
@@ -149,7 +149,7 @@ arguments and pass it to the _myName_ _setState_ function.
 
 How is going to work?
 
-- _setMyName_ request update the state.
+- _setMyName_ requests to update the state.
 - This will launch a rerender of the component.
 - When the component code is executed and reaches the line
   code that does the _useState_ instead of return _John Doe_, it will
@@ -157,7 +157,7 @@ How is going to work?
 - When rerendering the component that new value will be shown in the
   screen.
 
-You have to change your mindset, ... try to repeat this example
+You have to change your mindset, try to repeat this example
 without help and understand it well, it is your first big step to understand
 how this technology works.
 
