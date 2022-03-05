@@ -1,8 +1,17 @@
+[<img align="left" src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png" alt="español" width="170"/>](https://lemoncode.net/) 
+
+
+[<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/02-use-state-object/Readme_es.md)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/02-use-state-object/Readme.md)
+  
+<br>
+<br>
+
 # 02 Use State Object
 
 ## Resume
 
-This example takes the _01-use-state_ as a starting point.
+This example takes the [_01-use-state_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/01-use-state) as a starting point.
 
 In the previous example we stored a string in the state, but... we don't use _useState_ just for basic types. Can we store an object using
 _useState_? Yes we can, but we have to take into consideration that updates on this

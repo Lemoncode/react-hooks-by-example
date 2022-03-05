@@ -1,10 +1,21 @@
-# 17 Why Did You Update
+
+[<img align="left" src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png" alt="español" width="170"/>](https://lemoncode.net/) 
+
+
+[<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/18-why-did-you-update/Readme_es.md)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/18-why-did-you-update/Readme.md)
+  
+<br>
+<br>
+
+
+# 18 Why Did You Update
 
 As we have seen in previous examples, using the higher order component _React.memo_ we avoid rendering a component when the same props give the same result. But what if you still see renderings that seem unnecessary? You can use a custom hook that allows you to see what props are causing the component to re-render. In this example we will learn how to implement it.
 
 # Steps
 
-- We will take as a starting point the previous example _17-use-debug-value_. Copy the contents of the project to a new folder and run _npm install_.
+- We will take as a starting point the previous example [_17-use-debug-value_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/17-use-debug-value). Copy the contents of the project to a new folder and run _npm install_.
 
 ```bash
 npm install

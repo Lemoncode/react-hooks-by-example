@@ -1,8 +1,17 @@
+[<img align="left" src="https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536155167931-3JJ7O74IM4QP88L0RQS9/3_200.png" alt="español" width="170"/>](https://lemoncode.net/) 
+
+
+[<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Spain_flag_icon.svg/1200px-Spain_flag_icon.svg.png" alt="english" width="50"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/10-use-reducer/Readme_es.md)
+[<img align="right" src="https://assets.stickpng.com/images/580b585b2edbce24c47b2836.png" alt="inglés" width="47"/>](https://github.com/Lemoncode/react-hooks-by-example/blob/master/10-use-reducer/Readme.md)
+  
+<br>
+<br>
+
 # 10 useReducer
 
 ## Resumen
 
-Este ejemplo toma como punto de partida el ejemplo _09-pure-component-callback_.
+Este ejemplo toma como punto de partida el ejemplo [_09-pure-component-callback_](https://github.com/Lemoncode/react-hooks-by-example/blob/master/09-pure-component-callback).
 
 Ya hemos visto la potencia de los hooks, pero en ciertos escenarios en los
 que puedes tener mucha lógica y muchos niveles de subcomponentes, pueden que te lleve a tener problemas de mantenibilidad, para ciertos escenarios podemos hacer uso del hook _useReducer_, inspirado en el patrón _Redux_.
